@@ -1,0 +1,6 @@
+module Pods_A_Live [system] {
+  umbrella header "Pods-A·Live-umbrella.h"
+
+  export *
+  module * { export * }
+}

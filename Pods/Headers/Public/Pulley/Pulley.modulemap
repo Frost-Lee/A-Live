@@ -1,0 +1,6 @@
+module Pulley [system] {
+  umbrella header "Pulley-umbrella.h"
+
+  export *
+  module * { export * }
+}
