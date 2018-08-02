@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A23B8AF211199BD006A9C95 /* ARWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23B8AE211199BD006A9C95 /* ARWindowViewController.swift */; };
+		3A23B8B1211199DE006A9C95 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23B8B0211199DE006A9C95 /* DrawerViewController.swift */; };
+		3A6045C62112D9540077EE08 /* ALTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6045C52112D9540077EE08 /* ALTheme.swift */; };
+		3A6DF7422111E38C00DA5CD2 /* DrawerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6DF7412111E38C00DA5CD2 /* DrawerView.xib */; };
+		3A6DF7442111E39B00DA5CD2 /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DF7432111E39B00DA5CD2 /* DrawerView.swift */; };
+		3AE8636D2111F8B500297088 /* DrawerTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8636C2111F8B500297088 /* DrawerTabView.xib */; };
+		3AE8636F2111F8C200297088 /* DrawerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8636E2111F8C200297088 /* DrawerTabView.swift */; };
 		3AEAA09B210FF48E00D45A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEAA09A210FF48E00D45A01 /* AppDelegate.swift */; };
-		3AEAA09D210FF48E00D45A01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEAA09C210FF48E00D45A01 /* ViewController.swift */; };
 		3AEAA0A0210FF48E00D45A01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEAA09E210FF48E00D45A01 /* Main.storyboard */; };
 		3AEAA0A2210FF49100D45A01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEAA0A1210FF49100D45A01 /* Assets.xcassets */; };
 		3AEAA0A5210FF49100D45A01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEAA0A3210FF49100D45A01 /* LaunchScreen.storyboard */; };
@@ -16,9 +22,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A23B8AE211199BD006A9C95 /* ARWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARWindowViewController.swift; sourceTree = "<group>"; };
+		3A23B8B0211199DE006A9C95 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		3A6045C52112D9540077EE08 /* ALTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTheme.swift; sourceTree = "<group>"; };
+		3A6DF7412111E38C00DA5CD2 /* DrawerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerView.xib; sourceTree = "<group>"; };
+		3A6DF7432111E39B00DA5CD2 /* DrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
+		3AE8636C2111F8B500297088 /* DrawerTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerTabView.xib; sourceTree = "<group>"; };
+		3AE8636E2111F8C200297088 /* DrawerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerTabView.swift; sourceTree = "<group>"; };
 		3AEAA097210FF48E00D45A01 /* A·Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A·Live.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEAA09A210FF48E00D45A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3AEAA09C210FF48E00D45A01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3AEAA09F210FF48E00D45A01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AEAA0A1210FF49100D45A01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AEAA0A4210FF49100D45A01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +61,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3A6045C72112DBA50077EE08 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				3A23B8B0211199DE006A9C95 /* DrawerViewController.swift */,
+				3A6DF7412111E38C00DA5CD2 /* DrawerView.xib */,
+				3A6DF7432111E39B00DA5CD2 /* DrawerView.swift */,
+				3AE8636C2111F8B500297088 /* DrawerTabView.xib */,
+				3AE8636E2111F8C200297088 /* DrawerTabView.swift */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
+		3A9CA4012112DC22004857EB /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				3A23B8AE211199BD006A9C95 /* ARWindowViewController.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		3A9CA4022112DC35004857EB /* ALFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				3A6045C52112D9540077EE08 /* ALTheme.swift */,
+			);
+			path = ALFoundation;
+			sourceTree = "<group>";
+		};
 		3AEAA08E210FF48E00D45A01 = {
 			isa = PBXGroup;
 			children = (
@@ -72,10 +112,12 @@
 			children = (
 				3AEAA09A210FF48E00D45A01 /* AppDelegate.swift */,
 				3AEAA09E210FF48E00D45A01 /* Main.storyboard */,
-				3AEAA09C210FF48E00D45A01 /* ViewController.swift */,
-				3AEAA0A1210FF49100D45A01 /* Assets.xcassets */,
 				3AEAA0A3210FF49100D45A01 /* LaunchScreen.storyboard */,
+				3AEAA0A1210FF49100D45A01 /* Assets.xcassets */,
 				3AEAA0A6210FF49100D45A01 /* Info.plist */,
+				3A9CA4012112DC22004857EB /* AR */,
+				3A6045C72112DBA50077EE08 /* Drawer */,
+				3A9CA4022112DC35004857EB /* ALFoundation */,
 			);
 			path = "A·Live";
 			sourceTree = "<group>";
@@ -150,6 +192,8 @@
 				3AEAA0A5210FF49100D45A01 /* LaunchScreen.storyboard in Resources */,
 				3AEAA0A2210FF49100D45A01 /* Assets.xcassets in Resources */,
 				3AEAA0A0210FF48E00D45A01 /* Main.storyboard in Resources */,
+				3AE8636D2111F8B500297088 /* DrawerTabView.xib in Resources */,
+				3A6DF7422111E38C00DA5CD2 /* DrawerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,8 +225,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AEAA09D210FF48E00D45A01 /* ViewController.swift in Sources */,
+				3A23B8AF211199BD006A9C95 /* ARWindowViewController.swift in Sources */,
+				3AE8636F2111F8C200297088 /* DrawerTabView.swift in Sources */,
+				3A23B8B1211199DE006A9C95 /* DrawerViewController.swift in Sources */,
+				3A6DF7442111E39B00DA5CD2 /* DrawerView.swift in Sources */,
 				3AEAA09B210FF48E00D45A01 /* AppDelegate.swift in Sources */,
+				3A6045C62112D9540077EE08 /* ALTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +380,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C47ZVS5JD;
 				INFOPLIST_FILE = "A·Live/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,7 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Frost.A-Live";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -351,6 +400,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C47ZVS5JD;
 				INFOPLIST_FILE = "A·Live/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,7 +408,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Frost.A-Live";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
