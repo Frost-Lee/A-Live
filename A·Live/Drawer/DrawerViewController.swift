@@ -23,6 +23,18 @@ class DrawerViewController: UIViewController {
         self.drawerView = view
         drawerView.frame = self.view.bounds
         self.view.addSubview(drawerView)
+        drawerView.delegate = self
     }
 
+}
+
+
+extension DrawerViewController: DrawerDelegate {
+    func shouldLaunchAddPhotoController() {
+        let storyboard = UIStoryboard(name: "AddPhotoViewController", bundle: Bundle.main)
+        self.present(storyboard.instantiateInitialViewController()!, animated: true, completion: nil)
+    }
+    
+    func shouldLaunchAddAlbumController() {
+    }
 }
