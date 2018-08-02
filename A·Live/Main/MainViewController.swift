@@ -21,6 +21,13 @@ class MainViewController: PulleyViewController {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(getReadyForNewOrientation),
             name: UIDevice.orientationDidChangeNotification , object: nil)
+        delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let feedbackGenerator = UISelectionFeedbackGenerator()
+        self.feedbackGenerator = feedbackGenerator
     }
     
     @objc private func getReadyForNewOrientation() {
@@ -33,4 +40,9 @@ class MainViewController: PulleyViewController {
         }
     }
 
+}
+
+
+extension MainViewController {
+    
 }
