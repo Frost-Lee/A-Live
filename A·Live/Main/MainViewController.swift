@@ -21,13 +21,12 @@ class MainViewController: PulleyViewController {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(getReadyForNewOrientation),
             name: UIDevice.orientationDidChangeNotification , object: nil)
-        //self.setDrawerPosition(position: .open, animated: true)
     }
     
     @objc private func getReadyForNewOrientation() {
         let orientation = UIDevice.current.orientation
         if orientation == .landscapeLeft || orientation == .landscapeRight {
-            previousDrawerPosition = self.drawerPosition
+            previousDrawerPosition = (drawerPosition != .closed) ? drawerPosition : previousDrawerPosition
             setDrawerPosition(position: .closed, animated: true)
         } else if orientation == .portrait {
             setDrawerPosition(position: previousDrawerPosition, animated: true)

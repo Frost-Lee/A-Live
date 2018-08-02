@@ -60,20 +60,11 @@ class DrawerTabView: UIView {
                         break
                     }
             }, completion: nil)
-            MainViewController.sharedInstance.setDrawerPosition(position: .partiallyRevealed, animated: true)
+            if MainViewController.sharedInstance.drawerPosition == .collapsed {
+                MainViewController.sharedInstance.setDrawerPosition(position: .partiallyRevealed, animated: true)
+            }
         }
     }
-    
-//    private func setupLockFrames() {
-//        if newLabel != nil && albumLabel != nil && mineLabel != nil {
-//            newSelectLockFrame = CGRect(x: (newLabel.frame.minX + newLabel.frame.maxX) / 2.0 - 50,
-//                                        y: 51, width: 100, height: 5)
-//            albumSelectLockFrame = CGRect(x: (albumLabel.frame.minX + albumLabel.frame.maxX) / 2.0 - 50,
-//                                          y: 51, width: 100, height: 5)
-//            mineSelectLockFrame = CGRect(x: (mineLabel.frame.minX + mineLabel.frame.maxX) / 2.0 - 50,
-//                                         y: 51, width: 100, height: 5)
-//        }
-//    }
     
     @IBAction func newButtonTapped(_ sender: UIButton) {
         if selectedIndex != 0 {
