@@ -37,4 +37,7 @@ extension DrawerViewController: DrawerDelegate {
     
     func shouldLaunchAddAlbumController() {
     }
+    
+    func shouldLaunchAlbumDetailController(with album: Album) {
+    }
 }

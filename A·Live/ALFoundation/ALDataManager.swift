@@ -41,9 +41,15 @@ class ALDataManager {
         newPhoto.photoPath = savePhoto(photo: photo)
         newPhoto.liveVideoPath = (liveVideoURL != nil) ? saveVideo(videoURL: liveVideoURL!) : ""
         newPhoto.photoDescription = description ?? ""
-        newPhoto.belongTo = fetchAlbum(with: album)!
+        newPhoto.belongTo = fetchAlbums(with: album) { album in
+            album.contains?.adding(newPhoto)
+        }.first
     }
     
+    /**
+     Remove an album with identifier, the photos inside the album would also be removed
+     - parameter identifier: The albumIdentifier of the album
+     */
     func removeAlbum(with identifier: String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -56,8 +62,13 @@ class ALDataManager {
             removeALPhoto(with: alPhoto.photoIdentifier!)
         }
         context.delete(fetchedAlbums.first!)
+        try! context.save()
     }
     
+    /**
+     Remove a photo with identifier, the related photo and video file would also be removed
+     - parameter identifier: The photoIdentifier of the photo
+     */
     func removeALPhoto(with identifier: String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -67,24 +78,32 @@ class ALDataManager {
         removePhoto(with: (fetchedPhotos.first?.photoPath)!)
         removeVideo(with: (fetchedPhotos.first?.liveVideoPath)!)
         context.delete(fetchedPhotos.first!)
+        try! context.save()
     }
     
-    private func fetchAlbum(with identifier: String) -> Album? {
+    /**
+     Fetch albums from persistent container.
+     - parameter identifier: The albumIdentifier of the album, if it's nil, then all albums would be fetched
+     - parameter completion: The operation to the first result when the results are fetched
+     
+     - returns: The albums fetched, if identifier is specified, the results should be one
+    */
+    func fetchAlbums(with identifier: String?, completion: ((Album) -> ())?) -> [Album] {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Album")
-        fetchRequest.predicate = NSPredicate(format: "albumIdentifier=\(identifier)")
+        if identifier != nil {
+            fetchRequest.predicate = NSPredicate(format: "albumIdentifier=\(identifier!)")
+        }
         let fetchedAlbums = try! context.fetch(fetchRequest) as! [Album]
-        return fetchedAlbums.first
+        completion?(fetchedAlbums.first!)
+        try! context.save()
+        return fetchedAlbums
     }
     
-    private func fetchPhoto(with identifier: String, delete: Bool = false) -> Photo? {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Photo")
-        fetchRequest.predicate = NSPredicate(format: "photoIdentifier=\(identifier)")
-        let fetchedPhotos = try! context.fetch(fetchRequest) as! [Photo]
-        return fetchedPhotos.first
+    func getPhoto(with path: String) -> UIImage {
+        let imageData = try! Data(contentsOf: URL(fileURLWithPath: path))
+        return UIImage(data: imageData)!
     }
     
     private func savePhoto(photo: UIImage) -> String {

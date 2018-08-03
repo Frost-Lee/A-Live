@@ -11,6 +11,7 @@ import UIKit
 protocol DrawerDelegate {
     func shouldLaunchAddPhotoController()
     func shouldLaunchAddAlbumController()
+    func shouldLaunchAlbumDetailController(with album: Album)
 }
 
 class DrawerView: UIView {
@@ -27,11 +28,16 @@ class DrawerView: UIView {
     var delegate: DrawerDelegate?
     
     var newView: NewView!
+    var albumView: AlbumView!
+    
+    private var contentViewFrame: CGRect = CGRect(x: 0, y: 69, width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height - 69)
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupDrawerTabView()
         setupNewView()
+        setupAlbumView()
     }
     
     override func layoutSubviews() {
@@ -58,10 +64,17 @@ class DrawerView: UIView {
     private func setupNewView() {
         let nib = UINib(nibName: "NewView", bundle: Bundle.main)
         let view = nib.instantiate(withOwner: self, options: nil).first as! NewView
-        let screenBound = UIScreen.main.bounds
-        view.frame = CGRect(x: 0, y: 69, width: screenBound.width, height: screenBound.height - 69)
+        view.frame = contentViewFrame
         newView = view
         newView.delegate = self
+    }
+    
+    private func setupAlbumView() {
+        let nib = UINib(nibName: "AlbumView", bundle: Bundle.main)
+        let view = nib.instantiate(withOwner: self, options: nil).first as! AlbumView
+        view.frame = contentViewFrame
+        albumView = view
+        albumView.delegate = self
     }
 
 }
@@ -72,6 +85,9 @@ extension DrawerView: DrawerTabDelegate {
         switch index {
         case 0:
             setupDrawerContentView(with: newView)
+        case 1:
+            setupDrawerContentView(with: albumView)
+            albumView.reloadAlbums()
         default:
             break
         }
@@ -86,5 +102,12 @@ extension DrawerView: NewDelegate {
     
     func addAlbumButtonDidTapped() {
         delegate?.shouldLaunchAddAlbumController()
+    }
+}
+
+
+extension DrawerView: AlbumDelegate {
+    func albumDidSelected(album: Album) {
+        delegate?.shouldLaunchAlbumDetailController(with: album)
     }
 }
