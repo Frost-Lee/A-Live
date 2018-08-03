@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A19F6E52113F9F70002200B /* ALDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A19F6E32113F9F70002200B /* ALDataModel.xcdatamodeld */; };
+		3A19F6E72113FAE90002200B /* ALDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19F6E62113FAE90002200B /* ALDataManager.swift */; };
+		3A19F6EC21142B1A0002200B /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19F6EA21142B1A0002200B /* Album.swift */; };
+		3A19F6ED21142B1A0002200B /* Album+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19F6EB21142B1A0002200B /* Album+CoreDataProperties.swift */; };
 		3A1ECC6C2112F2230043E1B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1ECC6B2112F2230043E1B1 /* MainViewController.swift */; };
 		3A23B8AF211199BD006A9C95 /* ARWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23B8AE211199BD006A9C95 /* ARWindowViewController.swift */; };
 		3A23B8B1211199DE006A9C95 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23B8B0211199DE006A9C95 /* DrawerViewController.swift */; };
@@ -17,6 +21,8 @@
 		3A9CA4072112DE41004857EB /* NewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CA4062112DE41004857EB /* NewView.swift */; };
 		3A9CA40B2112E96B004857EB /* AddPhotoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9CA40A2112E96B004857EB /* AddPhotoViewController.storyboard */; };
 		3A9CA40D2112E97C004857EB /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CA40C2112E97C004857EB /* AddPhotoViewController.swift */; };
+		3AB8853D21142D0600211531 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8853B21142D0600211531 /* Photo.swift */; };
+		3AB8853E21142D0600211531 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8853C21142D0600211531 /* Photo+CoreDataProperties.swift */; };
 		3AE8636D2111F8B500297088 /* DrawerTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8636C2111F8B500297088 /* DrawerTabView.xib */; };
 		3AE8636F2111F8C200297088 /* DrawerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8636E2111F8C200297088 /* DrawerTabView.swift */; };
 		3AEAA09B210FF48E00D45A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEAA09A210FF48E00D45A01 /* AppDelegate.swift */; };
@@ -27,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A19F6E42113F9F70002200B /* ALDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ALDataModel.xcdatamodel; sourceTree = "<group>"; };
+		3A19F6E62113FAE90002200B /* ALDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALDataManager.swift; sourceTree = "<group>"; };
+		3A19F6EA21142B1A0002200B /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Album.swift; path = "/Users/licanchen/Desktop/A·Live/A·Live/ALFoundation/Album.swift"; sourceTree = "<absolute>"; };
+		3A19F6EB21142B1A0002200B /* Album+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Album+CoreDataProperties.swift"; path = "/Users/licanchen/Desktop/A·Live/A·Live/ALFoundation/Album+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		3A1ECC6B2112F2230043E1B1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3A23B8AE211199BD006A9C95 /* ARWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARWindowViewController.swift; sourceTree = "<group>"; };
 		3A23B8B0211199DE006A9C95 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +47,8 @@
 		3A9CA4062112DE41004857EB /* NewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewView.swift; sourceTree = "<group>"; };
 		3A9CA40A2112E96B004857EB /* AddPhotoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPhotoViewController.storyboard; sourceTree = "<group>"; };
 		3A9CA40C2112E97C004857EB /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
+		3AB8853B21142D0600211531 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = "/Users/licanchen/Desktop/A·Live/A·Live/ALFoundation/Photo.swift"; sourceTree = "<absolute>"; };
+		3AB8853C21142D0600211531 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Photo+CoreDataProperties.swift"; path = "/Users/licanchen/Desktop/A·Live/A·Live/ALFoundation/Photo+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		3AE8636C2111F8B500297088 /* DrawerTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerTabView.xib; sourceTree = "<group>"; };
 		3AE8636E2111F8C200297088 /* DrawerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerTabView.swift; sourceTree = "<group>"; };
 		3AEAA097210FF48E00D45A01 /* A·Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A·Live.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +119,12 @@
 			isa = PBXGroup;
 			children = (
 				3A6045C52112D9540077EE08 /* ALTheme.swift */,
+				3A19F6E62113FAE90002200B /* ALDataManager.swift */,
+				3A19F6E32113F9F70002200B /* ALDataModel.xcdatamodeld */,
+				3A19F6EA21142B1A0002200B /* Album.swift */,
+				3A19F6EB21142B1A0002200B /* Album+CoreDataProperties.swift */,
+				3AB8853B21142D0600211531 /* Photo.swift */,
+				3AB8853C21142D0600211531 /* Photo+CoreDataProperties.swift */,
 			);
 			path = ALFoundation;
 			sourceTree = "<group>";
@@ -274,12 +292,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A19F6E72113FAE90002200B /* ALDataManager.swift in Sources */,
 				3A23B8AF211199BD006A9C95 /* ARWindowViewController.swift in Sources */,
 				3A9CA40D2112E97C004857EB /* AddPhotoViewController.swift in Sources */,
+				3AB8853E21142D0600211531 /* Photo+CoreDataProperties.swift in Sources */,
 				3AE8636F2111F8C200297088 /* DrawerTabView.swift in Sources */,
 				3A23B8B1211199DE006A9C95 /* DrawerViewController.swift in Sources */,
+				3A19F6ED21142B1A0002200B /* Album+CoreDataProperties.swift in Sources */,
+				3A19F6EC21142B1A0002200B /* Album.swift in Sources */,
 				3A6DF7442111E39B00DA5CD2 /* DrawerView.swift in Sources */,
+				3AB8853D21142D0600211531 /* Photo.swift in Sources */,
 				3A9CA4072112DE41004857EB /* NewView.swift in Sources */,
+				3A19F6E52113F9F70002200B /* ALDataModel.xcdatamodeld in Sources */,
 				3A1ECC6C2112F2230043E1B1 /* MainViewController.swift in Sources */,
 				3AEAA09B210FF48E00D45A01 /* AppDelegate.swift in Sources */,
 				3A6045C62112D9540077EE08 /* ALTheme.swift in Sources */,
@@ -486,6 +510,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3A19F6E32113F9F70002200B /* ALDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A19F6E42113F9F70002200B /* ALDataModel.xcdatamodel */,
+			);
+			currentVersion = 3A19F6E42113F9F70002200B /* ALDataModel.xcdatamodel */;
+			path = ALDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3AEAA08F210FF48E00D45A01 /* Project object */;
 }

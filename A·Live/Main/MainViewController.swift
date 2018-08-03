@@ -41,8 +41,3 @@ class MainViewController: PulleyViewController {
     }
 
 }
-
-
-extension MainViewController {
-    
-}
