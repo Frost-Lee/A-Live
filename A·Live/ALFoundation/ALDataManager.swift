@@ -29,7 +29,7 @@ class ALDataManager {
         try! context.save()
     }
     
-    func addPhoto(to album: String, with title: String, photo: UIImage, description: String?,
+    func addPhoto(to album: String, with title: String, photo: UIImage, index: Int, description: String?,
                   liveVideoURL: URL?) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -37,10 +37,36 @@ class ALDataManager {
         let newPhoto = Photo(entity: entity!, insertInto: context)
         newPhoto.photoIdentifier = UUID().uuidString
         newPhoto.photoTitle = title
+        newPhoto.indexInAlbum = Int32(index)
         newPhoto.photoPath = savePhoto(photo: photo)
         newPhoto.liveVideoPath = (liveVideoURL != nil) ? saveVideo(videoURL: liveVideoURL!) : ""
         newPhoto.photoDescription = description ?? ""
         newPhoto.belongTo = fetchAlbum(with: album)!
+    }
+    
+    func removeAlbum(with identifier: String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Album")
+        fetchRequest.predicate = NSPredicate(format: "albumIdentifier=\(identifier)")
+        let fetchedAlbums = try! context.fetch(fetchRequest) as! [Album]
+        let relatedPhotos = fetchedAlbums.first?.contains
+        for photo in relatedPhotos! {
+            let alPhoto = photo as! Photo
+            removeALPhoto(with: alPhoto.photoIdentifier!)
+        }
+        context.delete(fetchedAlbums.first!)
+    }
+    
+    func removeALPhoto(with identifier: String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Photo")
+        fetchRequest.predicate = NSPredicate(format: "photoIdentifier=\(identifier)")
+        let fetchedPhotos = try! context.fetch(fetchRequest) as! [Photo]
+        removePhoto(with: (fetchedPhotos.first?.photoPath)!)
+        removeVideo(with: (fetchedPhotos.first?.liveVideoPath)!)
+        context.delete(fetchedPhotos.first!)
     }
     
     private func fetchAlbum(with identifier: String) -> Album? {
@@ -50,6 +76,15 @@ class ALDataManager {
         fetchRequest.predicate = NSPredicate(format: "albumIdentifier=\(identifier)")
         let fetchedAlbums = try! context.fetch(fetchRequest) as! [Album]
         return fetchedAlbums.first
+    }
+    
+    private func fetchPhoto(with identifier: String, delete: Bool = false) -> Photo? {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Photo")
+        fetchRequest.predicate = NSPredicate(format: "photoIdentifier=\(identifier)")
+        let fetchedPhotos = try! context.fetch(fetchRequest) as! [Photo]
+        return fetchedPhotos.first
     }
     
     private func savePhoto(photo: UIImage) -> String {
@@ -72,6 +107,14 @@ class ALDataManager {
         try! FileManager.default.copyItem(at: videoURL, to: URL(fileURLWithPath:
             ALDataManager.liveVideoDirectory + videoIdentifier))
         return ALDataManager.liveVideoDirectory + videoIdentifier
+    }
+    
+    private func removePhoto(with path: String) {
+        try? FileManager.default.removeItem(atPath: path)
+    }
+    
+    private func removeVideo(with path: String) {
+        try? FileManager.default.removeItem(atPath: path)
     }
     
 }
