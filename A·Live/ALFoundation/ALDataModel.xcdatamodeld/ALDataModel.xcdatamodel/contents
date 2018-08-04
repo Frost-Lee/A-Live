@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14296.2" systemVersion="18A347e" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Album" representedClassName=".Album" syncable="YES">
+    <entity name="Album" representedClassName="Album" syncable="YES">
         <attribute name="albumDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="albumIdentifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="albumTitle" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,7 +8,7 @@
         <attribute name="numberOfPhotos" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="contains" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="belongTo" inverseEntity="Photo" syncable="YES"/>
     </entity>
-    <entity name="Photo" representedClassName=".Photo" syncable="YES">
+    <entity name="Photo" representedClassName="Photo" syncable="YES">
         <attribute name="indexInAlbum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="liveVideoPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoDescription" optional="YES" attributeType="String" syncable="YES"/>

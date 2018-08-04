@@ -36,6 +36,8 @@ extension DrawerViewController: DrawerDelegate {
     }
     
     func shouldLaunchAddAlbumController() {
+        let storyboard = UIStoryboard(name: "AddAlbumViewController", bundle: Bundle.main)
+        self.present(storyboard.instantiateInitialViewController()!, animated: true, completion: nil)
     }
     
     func shouldLaunchAlbumDetailController(with album: Album) {

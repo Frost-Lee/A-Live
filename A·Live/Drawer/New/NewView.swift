@@ -27,7 +27,6 @@ class NewView: UIView {
     }
     
     var delegate: NewDelegate?
-    
 
     @IBAction func addPhotoButtonTapped(_ sender: UIButton) {
         delegate?.addPhotoButtonDidTapped()

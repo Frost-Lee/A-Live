@@ -14,10 +14,9 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    override func awakeFromNib() {
-        self.layer.cornerRadius = 10
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.lightGray.cgColor
+    override func layoutSubviews() {
+        keyPhotoView.clipsToBounds = true
+        keyPhotoView.layer.cornerRadius = 10
     }
     
     var album: Album! {

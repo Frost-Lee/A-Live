@@ -11,12 +11,12 @@ import CoreData
 
 class ALDataManager {
     
-    static var photoDirectory: String = NSHomeDirectory() + "/Photos"
-    static var liveVideoDirectory: String = NSHomeDirectory() + "/LiveVideos"
+    static var photoDirectory: String = NSHomeDirectory() + "/Documents/Photos"
+    static var liveVideoDirectory: String = NSHomeDirectory() + "/Documents/LiveVideos"
     static var photoQuality: CGFloat = 0.75
     static let defaultManager = ALDataManager()
     
-    func createAlbum(with title: String, keyPhoto: UIImage, description: String?) {
+    func createAlbum(forName title: String, keyPhoto: UIImage, description: String?) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Album", in: context)
@@ -43,7 +43,9 @@ class ALDataManager {
         newPhoto.photoDescription = description ?? ""
         newPhoto.belongTo = fetchAlbums(with: album) { album in
             album.contains?.adding(newPhoto)
+            album.numberOfPhotos += 1
         }.first
+        try! context.save()
     }
     
     /**

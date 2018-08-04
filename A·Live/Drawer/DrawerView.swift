@@ -38,6 +38,8 @@ class DrawerView: UIView {
         setupDrawerTabView()
         setupNewView()
         setupAlbumView()
+        setupDrawerContentView(with: albumView)
+        albumView.reloadAlbums()
     }
     
     override func layoutSubviews() {
