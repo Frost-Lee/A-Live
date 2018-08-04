@@ -12,7 +12,6 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var keyPhotoView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func layoutSubviews() {
         keyPhotoView.clipsToBounds = true
@@ -22,8 +21,8 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     var album: Album! {
         didSet {
             keyPhotoView.image = ALDataManager.defaultManager.getPhoto(with: album.keyPhotoPath!)
-            titleLabel.text = album.albumTitle!
-            descriptionLabel.text = album.albumDescription!
+            titleLabel.attributedText = NSAttributedString(string: album.albumTitle!, attributes:
+                ALTheme.albumTitleTextAttribute)
         }
     }
     

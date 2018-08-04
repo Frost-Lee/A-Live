@@ -12,50 +12,43 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AlbumCollectionViewCell" customModule="A·Live" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="343" height="215"/>
+            <rect key="frame" x="0.0" y="0.0" width="236" height="144"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxU-rA-hba">
-                    <rect key="frame" x="0.0" y="0.0" width="343" height="215"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxU-rA-hba">
+                    <rect key="frame" x="0.0" y="0.0" width="236" height="144"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNm-v7-jHX">
-                    <rect key="frame" x="16" y="155" width="311" height="54"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="54" id="9mo-K5-lV6"/>
-                    </constraints>
-                    <string key="text">When my time comes, forget the wrong that I've done, help me leave behind some, reason to be missed. Don't resent me, and when you're feeling empty</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wuzhen Trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp5-jg-ADD">
-                    <rect key="frame" x="16" y="121" width="311" height="33"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="33" id="6Pv-e6-yDn"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp5-jg-ADD">
+                    <rect key="frame" x="16" y="96" width="204" height="24.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Shanghai Trip">
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <font key="NSFont" size="21" name="SFCompactDisplay-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="pp5-jg-ADD" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-16" id="J4q-Vx-WwG"/>
-                <constraint firstItem="pp5-jg-ADD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="PdF-Ph-axH"/>
-                <constraint firstItem="pp5-jg-ADD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="121" id="ean-wh-ppy"/>
-                <constraint firstItem="BNm-v7-jHX" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-16" id="h4f-QR-faZ"/>
-                <constraint firstItem="BNm-v7-jHX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="kFF-J9-1yq"/>
-                <constraint firstItem="BNm-v7-jHX" firstAttribute="top" secondItem="pp5-jg-ADD" secondAttribute="bottom" constant="1" id="uBe-zS-9HW"/>
+                <constraint firstItem="dxU-rA-hba" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0Rr-f5-JAf"/>
+                <constraint firstItem="pp5-jg-ADD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="3Jk-k3-lRg"/>
+                <constraint firstItem="dxU-rA-hba" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="IcW-Xp-bMu"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pp5-jg-ADD" secondAttribute="trailing" constant="16" id="JVS-Y9-OZo"/>
+                <constraint firstItem="dxU-rA-hba" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Sol-0F-qir"/>
+                <constraint firstItem="dxU-rA-hba" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="eJB-Ut-gE2"/>
+                <constraint firstItem="pp5-jg-ADD" firstAttribute="centerY" secondItem="dxU-rA-hba" secondAttribute="centerY" multiplier="1.5" id="mfE-sq-gaB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="descriptionLabel" destination="BNm-v7-jHX" id="JRl-ij-N5R"/>
                 <outlet property="keyPhotoView" destination="dxU-rA-hba" id="RWV-J9-dP8"/>
                 <outlet property="titleLabel" destination="pp5-jg-ADD" id="eT5-1U-edl"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="86.5"/>
+            <point key="canvasLocation" x="-20" y="51"/>
         </view>
     </objects>
 </document>

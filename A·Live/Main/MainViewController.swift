@@ -24,16 +24,10 @@ class MainViewController: PulleyViewController {
         delegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let feedbackGenerator = UISelectionFeedbackGenerator()
-        self.feedbackGenerator = feedbackGenerator
-    }
-    
     @objc private func getReadyForNewOrientation() {
         let orientation = UIDevice.current.orientation
+        previousDrawerPosition = (drawerPosition != .closed) ? drawerPosition : previousDrawerPosition
         if orientation == .landscapeLeft || orientation == .landscapeRight {
-            previousDrawerPosition = (drawerPosition != .closed) ? drawerPosition : previousDrawerPosition
             setDrawerPosition(position: .closed, animated: true)
         } else if orientation == .portrait {
             setDrawerPosition(position: previousDrawerPosition, animated: true)
