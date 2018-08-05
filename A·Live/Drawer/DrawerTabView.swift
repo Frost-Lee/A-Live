@@ -14,6 +14,7 @@ protocol DrawerTabDelegate {
 
 class DrawerTabView: UIView {
     
+    @IBOutlet var view: UIView!
     @IBOutlet weak var newLabel: UILabel! {
         didSet {
             newSelectLockFrame = CGRect(x: (newLabel.frame.minX + newLabel.frame.maxX) / 2.0 - 50,
@@ -64,6 +65,18 @@ class DrawerTabView: UIView {
                 MainViewController.sharedInstance.setDrawerPosition(position: .partiallyRevealed, animated: true)
             }
         }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        Bundle.main.loadNibNamed("DrawerTabView", owner: self, options: nil)
+        self.addSubview(view)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        Bundle.main.loadNibNamed("DrawerTabView", owner: self, options: nil)
+        self.addSubview(view)
     }
     
     @IBAction func newButtonTapped(_ sender: UIButton) {

@@ -14,9 +14,14 @@ protocol DrawerDelegate {
     func shouldLaunchAlbumDetailController(with album: Album)
 }
 
+
 class DrawerView: UIView {
 
-    @IBOutlet weak var drawerTabView: DrawerTabView!
+    @IBOutlet weak var drawerTabView: DrawerTabView! {
+        didSet {
+            drawerTabView.delegate = self
+        }
+    }
     @IBOutlet weak var gripperView: UIView! {
         didSet {
             gripperView.layer.cornerRadius = 2.5
@@ -24,60 +29,18 @@ class DrawerView: UIView {
         }
     }
     @IBOutlet weak var drawerContentView: UIView!
+    @IBOutlet weak var newView: NewView! {
+        didSet {
+            newView.delegate = self
+        }
+    }
+    @IBOutlet weak var albumView: AlbumView! {
+        didSet {
+            albumView.delegate = self
+        }
+    }
     
     var delegate: DrawerDelegate?
-    
-    var newView: NewView!
-    var albumView: AlbumView!
-    
-    private var contentViewFrame: CGRect = CGRect(x: 0, y: 69, width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.height - 69)
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupDrawerTabView()
-        setupNewView()
-        setupAlbumView()
-        setupDrawerContentView(with: albumView)
-        albumView.reloadAlbums()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        drawerTabView.frame = CGRect(x: 0, y: 12, width: UIScreen.main.bounds.width, height: 57)
-    }
-    
-    private func setupDrawerTabView() {
-        let nib = UINib(nibName: "DrawerTabView", bundle: Bundle.main)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! DrawerTabView
-        drawerTabView = view
-        self.addSubview(drawerTabView)
-        drawerTabView.delegate = self
-    }
-    
-    private func setupDrawerContentView(with view: UIView) {
-        if drawerContentView != nil {
-            drawerContentView.removeFromSuperview()
-        }
-        drawerContentView = view
-        self.addSubview(drawerContentView)
-    }
-    
-    private func setupNewView() {
-        let nib = UINib(nibName: "NewView", bundle: Bundle.main)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! NewView
-        view.frame = contentViewFrame
-        newView = view
-        newView.delegate = self
-    }
-    
-    private func setupAlbumView() {
-        let nib = UINib(nibName: "AlbumView", bundle: Bundle.main)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! AlbumView
-        view.frame = contentViewFrame
-        albumView = view
-        albumView.delegate = self
-    }
 
 }
 
@@ -86,9 +49,11 @@ extension DrawerView: DrawerTabDelegate {
     func tabDidTapped(at index: Int) {
         switch index {
         case 0:
-            setupDrawerContentView(with: newView)
+            newView.isHidden = false
+            albumView.isHidden = true
         case 1:
-            setupDrawerContentView(with: albumView)
+            newView.isHidden = true
+            albumView.isHidden = false
             albumView.reloadAlbums()
         default:
             break

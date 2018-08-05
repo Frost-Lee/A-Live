@@ -14,6 +14,7 @@ protocol AlbumDelegate {
 
 class AlbumView: UIView {
     
+    @IBOutlet var view: UIView!
     @IBOutlet weak var albumCollectionView: UICollectionView! {
         didSet {
             albumCollectionView.register(UINib(nibName: "AlbumCollectionViewCell",
@@ -31,6 +32,23 @@ class AlbumView: UIView {
     }
     
     var delegate: AlbumDelegate?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        Bundle.main.loadNibNamed("AlbumView", owner: self, options: nil)
+        self.addSubview(view)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        Bundle.main.loadNibNamed("AlbumView", owner: self, options: nil)
+        self.addSubview(view)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        view.setNeedsLayout()
+    }
     
     func reloadAlbums() {
         albums = ALDataManager.defaultManager.fetchAlbums(with: nil, completion: nil)
@@ -61,6 +79,9 @@ extension AlbumView: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
         collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = (collectionView.frame.height - 10.0) / 2
         let width = height * 1.6
+        print("SelfFrame: \(self.frame)")
+        print("CollectionViewFrame: \(collectionView.frame)")
+        print("CellHeight: \(height)")
         return CGSize(width: width, height: height)
     }
     

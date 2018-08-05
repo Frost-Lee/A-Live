@@ -16,44 +16,53 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpX-gw-owE">
-                    <rect key="frame" x="169" y="7" width="36" height="5"/>
+                    <rect key="frame" x="169.5" y="7" width="36" height="5"/>
                     <color key="backgroundColor" red="0.76470588235294112" green="0.77647058823529413" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="5" id="781-r6-gyE"/>
-                        <constraint firstAttribute="width" constant="36" id="Uax-NP-roP"/>
+                        <constraint firstAttribute="height" constant="5" id="R8q-Dc-4yo"/>
+                        <constraint firstAttribute="width" constant="36" id="raa-Em-yz6"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4y-M3-1nL" customClass="DrawerTabView" customModule="A·Live" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="12" width="375" height="57"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="57" id="iqF-sn-OBV"/>
+                        <constraint firstAttribute="height" constant="57" id="GnK-oF-1DB"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPZ-Dz-bpv">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPZ-Dz-bpv" customClass="AlbumView" customModule="A·Live" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="69" width="375" height="598"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0p-um-sgM" customClass="NewView" customModule="A·Live" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="69" width="375" height="598"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="1" green="0.20392156859999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TpX-gw-owE" secondAttribute="trailing" constant="170" id="5NS-jc-eAe"/>
-                <constraint firstItem="c4y-M3-1nL" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="AXd-qd-Pq9"/>
-                <constraint firstItem="TpX-gw-owE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="IyQ-Cc-v6K"/>
-                <constraint firstItem="QPZ-Dz-bpv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="P8N-Al-8Hj"/>
-                <constraint firstItem="QPZ-Dz-bpv" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="P8k-Lu-V3i"/>
-                <constraint firstItem="QPZ-Dz-bpv" firstAttribute="top" secondItem="c4y-M3-1nL" secondAttribute="bottom" id="TNP-Z9-Sdz"/>
-                <constraint firstItem="c4y-M3-1nL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="U6z-hh-kiu"/>
-                <constraint firstItem="TpX-gw-owE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="169" id="fZ8-ZL-AU5"/>
-                <constraint firstItem="c4y-M3-1nL" firstAttribute="top" secondItem="TpX-gw-owE" secondAttribute="bottom" id="ulp-6p-F91"/>
-                <constraint firstItem="QPZ-Dz-bpv" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="yPf-bb-PuP"/>
+                <constraint firstItem="H0p-um-sgM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6Rg-Ce-bkv"/>
+                <constraint firstItem="c4y-M3-1nL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6dY-2y-lar"/>
+                <constraint firstItem="QPZ-Dz-bpv" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="9xz-3q-Jqn"/>
+                <constraint firstItem="TpX-gw-owE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="Bn0-DZ-Cnx"/>
+                <constraint firstItem="c4y-M3-1nL" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Hbl-WK-1ke"/>
+                <constraint firstItem="QPZ-Dz-bpv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="L0A-G1-ca5"/>
+                <constraint firstItem="H0p-um-sgM" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="LHW-yw-vcn"/>
+                <constraint firstItem="QPZ-Dz-bpv" firstAttribute="top" secondItem="c4y-M3-1nL" secondAttribute="bottom" id="Odx-yn-0Z2"/>
+                <constraint firstItem="H0p-um-sgM" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="P9R-eT-FzL"/>
+                <constraint firstItem="c4y-M3-1nL" firstAttribute="top" secondItem="TpX-gw-owE" secondAttribute="bottom" id="eBq-h2-1ah"/>
+                <constraint firstItem="H0p-um-sgM" firstAttribute="top" secondItem="c4y-M3-1nL" secondAttribute="bottom" id="idd-8a-fs1"/>
+                <constraint firstItem="QPZ-Dz-bpv" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ueT-V0-neo"/>
+                <constraint firstItem="TpX-gw-owE" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="zdJ-0i-jyZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="albumView" destination="QPZ-Dz-bpv" id="I6f-NB-AUX"/>
                 <outlet property="drawerContentView" destination="QPZ-Dz-bpv" id="JU2-Lo-NEN"/>
                 <outlet property="drawerTabView" destination="c4y-M3-1nL" id="lYd-mb-ze6"/>
                 <outlet property="gripperView" destination="TpX-gw-owE" id="caG-K5-JGv"/>
+                <outlet property="newView" destination="H0p-um-sgM" id="tEC-nI-JqX"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>

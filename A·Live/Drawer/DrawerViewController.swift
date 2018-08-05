@@ -15,6 +15,7 @@ class DrawerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDrawerView()
+        drawerView.tabDidTapped(at: 1)
     }
     
     private func setupDrawerView() {

@@ -15,6 +15,7 @@ protocol NewDelegate {
 
 class NewView: UIView {
     
+    @IBOutlet var view: UIView!
     @IBOutlet weak var addPhotoButton: UIButton! {
         didSet {
             addPhotoButton.layer.cornerRadius = 10
@@ -27,6 +28,18 @@ class NewView: UIView {
     }
     
     var delegate: NewDelegate?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        Bundle.main.loadNibNamed("NewView", owner: self, options: nil)
+        self.addSubview(view)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        Bundle.main.loadNibNamed("NewView", owner: self, options: nil)
+        self.addSubview(view)
+    }
 
     @IBAction func addPhotoButtonTapped(_ sender: UIButton) {
         delegate?.addPhotoButtonDidTapped()
