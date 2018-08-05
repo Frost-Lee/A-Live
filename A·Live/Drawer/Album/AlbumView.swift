@@ -81,9 +81,6 @@ extension AlbumView: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
         collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = (collectionView.frame.height - 10.0) / 2
         let width = height * 1.6
-        print("SelfFrame: \(self.frame)")
-        print("CollectionViewFrame: \(collectionView.frame)")
-        print("CellHeight: \(height)")
         return CGSize(width: width, height: height)
     }
     

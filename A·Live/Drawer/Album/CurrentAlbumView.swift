@@ -29,11 +29,18 @@ class CurrentAlbumView: UIView {
     
     var album: Album! {
         didSet {
-            keyPhotoView.image = ALDataManager.defaultManager.getPhoto(with: album.keyPhotoPath!)
-            titleLabel.attributedText = NSAttributedString(string: album.albumTitle!, attributes:
-                ALTheme.currentAlbumTitleTextAttribute)
-            descriptionLabel.attributedText = NSAttributedString(string: album.albumDescription!, attributes:
-                ALTheme.currentAlbumDescriptionAttribute)
+            UIView.transition(with: keyPhotoView, duration: 0.25, options:
+                UIView.AnimationOptions.transitionCrossDissolve, animations:
+                {self.keyPhotoView.image = ALDataManager.defaultManager
+                    .getPhoto(with: self.album.keyPhotoPath!)}, completion: nil)
+            UIView.transition(with: titleLabel, duration: 0.25, options:
+                UIView.AnimationOptions.transitionCrossDissolve, animations:
+                {self.titleLabel.attributedText = NSAttributedString(string: self.album.albumTitle!, attributes:
+                    ALTheme.currentAlbumTitleTextAttribute)}, completion: nil)
+            UIView.transition(with: titleLabel, duration: 0.25, options:
+                UIView.AnimationOptions.transitionCrossDissolve, animations:
+                {self.descriptionLabel.attributedText = NSAttributedString(string: self.album.albumDescription!, attributes:
+                    ALTheme.currentAlbumDescriptionAttribute)}, completion: nil)
         }
     }
 
