@@ -87,10 +87,13 @@
                         <action selector="mineButtonTapped:" destination="-1" eventType="touchUpInside" id="QIN-th-pu2"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wN9-BL-OxM">
-                    <rect key="frame" x="137" y="51" width="100" height="5"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wN9-BL-OxM">
+                    <rect key="frame" x="137.5" y="51" width="100" height="5"/>
                     <color key="backgroundColor" red="1" green="0.72844432560000005" blue="0.13436530629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="ZQC-Ax-muy"/>
+                        <constraint firstAttribute="width" constant="100" id="iih-zT-zDf"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -101,9 +104,11 @@
                 <constraint firstItem="ep4-eP-2Dt" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="11" id="JFV-Jg-IRl"/>
                 <constraint firstItem="WdO-Go-jmS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="11" id="JpB-oB-J4u"/>
                 <constraint firstItem="ep4-eP-2Dt" firstAttribute="width" secondItem="WdO-Go-jmS" secondAttribute="width" id="NzU-O9-nRJ"/>
+                <constraint firstItem="wN9-BL-OxM" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Oik-Xn-vcN"/>
                 <constraint firstItem="Ldm-xM-lqa" firstAttribute="leading" secondItem="X0m-kU-SoN" secondAttribute="trailing" constant="65" id="OvH-9N-QPf"/>
                 <constraint firstItem="UIv-rf-Ym6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="11" id="US8-dd-zfs"/>
                 <constraint firstItem="kM0-Uz-Wy5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Wg6-MD-wbi"/>
+                <constraint firstItem="kM0-Uz-Wy5" firstAttribute="top" secondItem="wN9-BL-OxM" secondAttribute="bottom" id="X7s-St-i1Z"/>
                 <constraint firstItem="8Yd-e0-rtw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="18" id="aEK-B5-M1B"/>
                 <constraint firstItem="Ldm-xM-lqa" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="18" id="bKA-YS-tZ4"/>
                 <constraint firstItem="8Yd-e0-rtw" firstAttribute="width" secondItem="X0m-kU-SoN" secondAttribute="width" id="cgF-yn-hLP"/>

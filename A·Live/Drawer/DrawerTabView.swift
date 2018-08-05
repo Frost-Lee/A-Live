@@ -79,6 +79,15 @@ class DrawerTabView: UIView {
         self.addSubview(view)
     }
     
+    override func layoutSubviews() {
+        newSelectLockFrame = CGRect(x: (newLabel.frame.minX + newLabel.frame.maxX) / 2.0 - 50,
+                                    y: 51, width: 100, height: 5)
+        albumSelectLockFrame = CGRect(x: (albumLabel.frame.minX + albumLabel.frame.maxX) / 2.0 - 50,
+                                      y: 51, width: 100, height: 5)
+        mineSelectLockFrame = CGRect(x: (mineLabel.frame.minX + mineLabel.frame.maxX) / 2.0 - 50,
+                                     y: 51, width: 100, height: 5)
+    }
+    
     @IBAction func newButtonTapped(_ sender: UIButton) {
         if selectedIndex != 0 {
             selectedIndex = 0
