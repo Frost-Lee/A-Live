@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlbumView" customModule="A·Live" customModuleProvider="target">
             <connections>
                 <outlet property="albumCollectionView" destination="db1-hj-oSt" id="kNP-JP-G8e"/>
+                <outlet property="currentAlbumView" destination="TpI-fl-pDX" id="a6b-bU-8Gn"/>
                 <outlet property="view" destination="iN0-l3-epB" id="cDN-qH-Q4h"/>
             </connections>
         </placeholder>
@@ -29,7 +30,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpI-fl-pDX">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpI-fl-pDX" customClass="CurrentAlbumView" customModule="A·Live" customModuleProvider="target">
                     <rect key="frame" x="16" y="40" width="343" height="215"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -37,8 +38,8 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="db1-hj-oSt">
-                    <rect key="frame" x="0.0" y="319" width="375" height="219"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="frame" x="0.0" y="319" width="375" height="239"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="dtE-Cx-UeU">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -53,7 +54,7 @@
                 <constraint firstItem="db1-hj-oSt" firstAttribute="top" secondItem="3Dv-Aq-InG" secondAttribute="bottom" constant="8" id="KUg-6r-rHA"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TpI-fl-pDX" secondAttribute="trailing" constant="16" id="LRE-1u-Raa"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="db1-hj-oSt" secondAttribute="trailing" id="M3D-89-tLc"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="db1-hj-oSt" secondAttribute="bottom" constant="40" id="V5C-zo-oIQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="db1-hj-oSt" secondAttribute="bottom" constant="20" id="V5C-zo-oIQ"/>
                 <constraint firstItem="TpI-fl-pDX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="XzC-6T-mfy"/>
                 <constraint firstItem="3Dv-Aq-InG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="aRY-jJ-N1U"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3Dv-Aq-InG" secondAttribute="trailing" constant="16" id="bgv-m0-0sn"/>
@@ -62,7 +63,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="33.5" y="53.5"/>
+            <point key="canvasLocation" x="33.5" y="53"/>
         </view>
     </objects>
 </document>

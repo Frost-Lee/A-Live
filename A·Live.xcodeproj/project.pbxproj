@@ -14,6 +14,8 @@
 		3A1ECC6C2112F2230043E1B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1ECC6B2112F2230043E1B1 /* MainViewController.swift */; };
 		3A23B8AF211199BD006A9C95 /* ARWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23B8AE211199BD006A9C95 /* ARWindowViewController.swift */; };
 		3A23B8B1211199DE006A9C95 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23B8B0211199DE006A9C95 /* DrawerViewController.swift */; };
+		3A2638EE21172DBE00A0DDA3 /* CurrentAlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2638ED21172DBE00A0DDA3 /* CurrentAlbumView.swift */; };
+		3A2638F021172DCA00A0DDA3 /* CurrentAlbumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2638EF21172DCA00A0DDA3 /* CurrentAlbumView.xib */; };
 		3A6045C62112D9540077EE08 /* ALTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6045C52112D9540077EE08 /* ALTheme.swift */; };
 		3A6DF7422111E38C00DA5CD2 /* DrawerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6DF7412111E38C00DA5CD2 /* DrawerView.xib */; };
 		3A6DF7442111E39B00DA5CD2 /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DF7432111E39B00DA5CD2 /* DrawerView.swift */; };
@@ -46,6 +48,8 @@
 		3A1ECC6B2112F2230043E1B1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3A23B8AE211199BD006A9C95 /* ARWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARWindowViewController.swift; sourceTree = "<group>"; };
 		3A23B8B0211199DE006A9C95 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		3A2638ED21172DBE00A0DDA3 /* CurrentAlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlbumView.swift; sourceTree = "<group>"; };
+		3A2638EF21172DCA00A0DDA3 /* CurrentAlbumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentAlbumView.xib; sourceTree = "<group>"; };
 		3A6045C52112D9540077EE08 /* ALTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTheme.swift; sourceTree = "<group>"; };
 		3A6DF7412111E38C00DA5CD2 /* DrawerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerView.xib; sourceTree = "<group>"; };
 		3A6DF7432111E39B00DA5CD2 /* DrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				3AB8854521143FDB00211531 /* AlbumView.swift */,
 				3AB04A8E211443A50026C036 /* AlbumCollectionViewCell.xib */,
 				3AB04A90211443B60026C036 /* AlbumCollectionViewCell.swift */,
+				3A2638EF21172DCA00A0DDA3 /* CurrentAlbumView.xib */,
+				3A2638ED21172DBE00A0DDA3 /* CurrentAlbumView.swift */,
 			);
 			path = Album;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 				3AEAA0A5210FF49100D45A01 /* LaunchScreen.storyboard in Resources */,
 				3AB04A8F211443A50026C036 /* AlbumCollectionViewCell.xib in Resources */,
 				3A9CA4052112DD26004857EB /* NewView.xib in Resources */,
+				3A2638F021172DCA00A0DDA3 /* CurrentAlbumView.xib in Resources */,
 				3AB8854421143FB900211531 /* AlbumView.xib in Resources */,
 				3AB8854021143F4000211531 /* AddAlbumViewController.storyboard in Resources */,
 				3AEAA0A2210FF49100D45A01 /* Assets.xcassets in Resources */,
@@ -317,6 +324,7 @@
 				3AB8854221143F4F00211531 /* AddAlbumViewController.swift in Sources */,
 				3AB8854621143FDB00211531 /* AlbumView.swift in Sources */,
 				3A19F6E72113FAE90002200B /* ALDataManager.swift in Sources */,
+				3A2638EE21172DBE00A0DDA3 /* CurrentAlbumView.swift in Sources */,
 				3A23B8AF211199BD006A9C95 /* ARWindowViewController.swift in Sources */,
 				3A9CA40D2112E97C004857EB /* AddPhotoViewController.swift in Sources */,
 				3AB8853E21142D0600211531 /* Photo+CoreDataProperties.swift in Sources */,

@@ -15,6 +15,7 @@ protocol AlbumDelegate {
 class AlbumView: UIView {
     
     @IBOutlet var view: UIView!
+    @IBOutlet weak var currentAlbumView: CurrentAlbumView!
     @IBOutlet weak var albumCollectionView: UICollectionView! {
         didSet {
             albumCollectionView.register(UINib(nibName: "AlbumCollectionViewCell",
@@ -71,6 +72,7 @@ extension AlbumView: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        currentAlbumView.album = albums[indexPath.row]
         collectionView.deselectItem(at: indexPath, animated: true)
         delegate?.albumDidSelected(album: albums[indexPath.row])
     }

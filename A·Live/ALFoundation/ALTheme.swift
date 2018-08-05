@@ -14,9 +14,23 @@ class ALTheme {
     
     static var albumTitleTextAttribute: [NSAttributedString.Key : Any] {
         let font = UIFont.systemFont(ofSize: 21.0, weight: UIFont.Weight.bold)
+        return [NSAttributedString.Key.font: font, NSAttributedString.Key.shadow: ALTheme.distinctTextShadow]
+    }
+    
+    static var currentAlbumTitleTextAttribute: [NSAttributedString.Key : Any] {
+        let font = UIFont.systemFont(ofSize: 25.0, weight: .medium)
+        return [NSAttributedString.Key.font: font, NSAttributedString.Key.shadow: ALTheme.distinctTextShadow]
+    }
+    
+    static var currentAlbumDescriptionAttribute: [NSAttributedString.Key : Any] {
+        let font = UIFont.systemFont(ofSize: 14.0, weight: .medium)
+        return [NSAttributedString.Key.font: font, NSAttributedString.Key.shadow: ALTheme.distinctTextShadow]
+    }
+    
+    static var distinctTextShadow: NSShadow {
         let shadow = NSShadow()
         shadow.shadowColor = UIColor.gray
-        shadow.shadowBlurRadius = 3
-        return [NSAttributedString.Key.font: font, NSAttributedString.Key.shadow: shadow]
+        shadow.shadowBlurRadius = 3.0
+        return shadow
     }
 }

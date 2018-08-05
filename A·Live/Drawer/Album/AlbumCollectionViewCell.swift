@@ -14,6 +14,7 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         keyPhotoView.clipsToBounds = true
         keyPhotoView.layer.cornerRadius = 10
     }
