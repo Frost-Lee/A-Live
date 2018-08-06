@@ -87,6 +87,17 @@
                                     <outlet property="delegate" destination="hbn-QQ-bzH" id="1F2-tM-NoB"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c93-DR-cVh">
+                                <rect key="frame" x="16" y="189" width="100" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="qa2-K0-sdd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Add a Photo"/>
+                                <connections>
+                                    <action selector="addPhotoButtonTapped:" destination="hbn-QQ-bzH" eventType="touchUpInside" id="tTZ-yl-yg6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -99,8 +110,11 @@
                             <constraint firstItem="rUF-Tj-10w" firstAttribute="top" secondItem="qhO-77-0Ix" secondAttribute="bottom" constant="8" id="Jv8-3c-Spl"/>
                             <constraint firstItem="wTM-JI-IoF" firstAttribute="trailing" secondItem="mTx-6E-h8s" secondAttribute="trailing" constant="16" id="L2Y-ik-uxj"/>
                             <constraint firstItem="fiu-n7-ECw" firstAttribute="top" secondItem="Lyx-Tq-mlP" secondAttribute="bottom" constant="29" id="NCf-7h-zKC"/>
+                            <constraint firstItem="wTM-JI-IoF" firstAttribute="trailing" secondItem="c93-DR-cVh" secondAttribute="trailing" constant="259" id="Sbg-53-gzv"/>
+                            <constraint firstItem="c93-DR-cVh" firstAttribute="top" secondItem="Lyx-Tq-mlP" secondAttribute="bottom" constant="1" id="gmQ-yC-PUq"/>
                             <constraint firstItem="wTM-JI-IoF" firstAttribute="trailing" secondItem="fiu-n7-ECw" secondAttribute="trailing" constant="16" id="hVr-jX-xOI"/>
                             <constraint firstItem="wTM-JI-IoF" firstAttribute="trailing" secondItem="qhO-77-0Ix" secondAttribute="trailing" constant="16" id="iCg-Oe-fVb"/>
+                            <constraint firstItem="c93-DR-cVh" firstAttribute="leading" secondItem="wTM-JI-IoF" secondAttribute="leading" constant="16" id="jFd-in-OFm"/>
                             <constraint firstItem="mTx-6E-h8s" firstAttribute="top" secondItem="LtO-Ks-Yc1" secondAttribute="bottom" constant="8" id="jlT-2A-IeE"/>
                             <constraint firstItem="Lyx-Tq-mlP" firstAttribute="leading" secondItem="wTM-JI-IoF" secondAttribute="leading" constant="16" id="qX4-ZQ-qhE"/>
                             <constraint firstItem="P4V-g8-eIE" firstAttribute="leading" secondItem="wTM-JI-IoF" secondAttribute="leading" constant="16" id="qZ9-33-Nda"/>
@@ -131,8 +145,8 @@
                         <outlet property="albumCollectionView" destination="rUF-Tj-10w" id="m1i-sv-OqL"/>
                         <outlet property="doneButton" destination="WzY-Gq-YAn" id="50k-rQ-bVZ"/>
                         <outlet property="photoDescriptionTextField" destination="P4V-g8-eIE" id="zDK-iS-YRf"/>
+                        <outlet property="photoImageView" destination="Lyx-Tq-mlP" id="9cS-la-uLX"/>
                         <outlet property="photoTitleTextField" destination="mTx-6E-h8s" id="YxV-BS-FPj"/>
-                        <outlet property="photoView" destination="Lyx-Tq-mlP" id="nRz-LA-m9u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRf-ry-ymH" userLabel="First Responder" sceneMemberID="firstResponder"/>

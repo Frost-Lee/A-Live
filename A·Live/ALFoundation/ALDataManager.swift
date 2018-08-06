@@ -56,7 +56,7 @@ class ALDataManager {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Album")
-        fetchRequest.predicate = NSPredicate(format: "albumIdentifier=\(identifier)")
+        fetchRequest.predicate = NSPredicate(format: "albumIdentifier='\(identifier)'")
         let fetchedAlbums = try! context.fetch(fetchRequest) as! [Album]
         let relatedPhotos = fetchedAlbums.first?.contains
         for photo in relatedPhotos! {
@@ -75,7 +75,7 @@ class ALDataManager {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Photo")
-        fetchRequest.predicate = NSPredicate(format: "photoIdentifier=\(identifier)")
+        fetchRequest.predicate = NSPredicate(format: "photoIdentifier='\(identifier)'")
         let fetchedPhotos = try! context.fetch(fetchRequest) as! [Photo]
         removePhoto(with: (fetchedPhotos.first?.photoPath)!)
         removeVideo(with: (fetchedPhotos.first?.liveVideoPath)!)
@@ -95,7 +95,7 @@ class ALDataManager {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Album")
         if identifier != nil {
-            fetchRequest.predicate = NSPredicate(format: "albumIdentifier=\(identifier!)")
+            fetchRequest.predicate = NSPredicate(format: "albumIdentifier='\(identifier!)'")
         }
         let fetchedAlbums = try! context.fetch(fetchRequest) as! [Album]
         completion?(fetchedAlbums.first!)
