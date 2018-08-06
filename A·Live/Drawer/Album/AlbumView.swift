@@ -20,9 +20,6 @@ class AlbumView: UIView {
         didSet {
             albumCollectionView.register(UINib(nibName: "AlbumCollectionViewCell",
                 bundle: Bundle.main), forCellWithReuseIdentifier: "albumCollectionViewCell")
-            albumCollectionView.delegate = self
-            albumCollectionView.dataSource = self
-            albumCollectionView.setContentOffset(CGPoint(x: 16, y: 0), animated: false)
         }
     }
     

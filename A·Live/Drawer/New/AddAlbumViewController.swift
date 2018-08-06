@@ -26,7 +26,7 @@ class AddAlbumViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        ALDataManager.defaultManager.createAlbum(forName: albumTitleTextField.text!,
+        ALDataManager.defaultManager.createAlbum(titled: albumTitleTextField.text!,
                 keyPhoto: keyPhotoImageView.image!, description: albumDescriptionTextField.text)
         self.dismiss(animated: true, completion: nil)
     }

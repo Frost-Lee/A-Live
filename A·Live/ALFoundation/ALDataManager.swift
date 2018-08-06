@@ -16,7 +16,7 @@ class ALDataManager {
     static var photoQuality: CGFloat = 0.75
     static let defaultManager = ALDataManager()
     
-    func createAlbum(forName title: String, keyPhoto: UIImage, description: String?) {
+    func createAlbum(titled title: String, keyPhoto: UIImage, description: String?) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Album", in: context)
@@ -29,7 +29,7 @@ class ALDataManager {
         try! context.save()
     }
     
-    func addPhoto(to album: String, with title: String, photo: UIImage, index: Int, description: String?,
+    func addPhoto(to album: String, titled title: String, photo: UIImage, index: Int, description: String?,
                   liveVideoURL: URL?) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
