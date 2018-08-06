@@ -28,6 +28,14 @@ class AlbumView: UIView {
             albumCollectionView.reloadData()
         }
     }
+    var selectedAlbum: Int = -1 {
+        didSet {
+            albumCollectionView.reloadItems(at: [IndexPath(row: selectedAlbum, section: 0)])
+            if oldValue >= 0 {
+                albumCollectionView.reloadItems(at: [IndexPath(row: oldValue, section: 0)])
+            }
+        }
+    }
     
     var delegate: AlbumDelegate?
     
@@ -65,10 +73,16 @@ extension AlbumView: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
         let cell = albumCollectionView.dequeueReusableCell(withReuseIdentifier: "albumCollectionViewCell",
                                                            for: indexPath) as! AlbumCollectionViewCell
         cell.album = albums[indexPath.row]
+        if indexPath.row == selectedAlbum {
+            cell.highLight()
+        } else {
+            cell.dehighLight()
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedAlbum = indexPath.row
         currentAlbumView.album = albums[indexPath.row]
         collectionView.deselectItem(at: indexPath, animated: true)
         delegate?.albumDidSelected(album: albums[indexPath.row])

@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxU-rA-hba">
-                    <rect key="frame" x="0.0" y="0.0" width="236" height="144"/>
+                    <rect key="frame" x="2" y="2" width="232" height="140"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp5-jg-ADD">
                     <rect key="frame" x="16" y="96" width="204" height="24.5"/>
@@ -34,12 +34,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="dxU-rA-hba" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0Rr-f5-JAf"/>
+                <constraint firstItem="dxU-rA-hba" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="2" id="0Rr-f5-JAf"/>
                 <constraint firstItem="pp5-jg-ADD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="3Jk-k3-lRg"/>
-                <constraint firstItem="dxU-rA-hba" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="IcW-Xp-bMu"/>
+                <constraint firstItem="dxU-rA-hba" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-2" id="IcW-Xp-bMu"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pp5-jg-ADD" secondAttribute="trailing" constant="16" id="JVS-Y9-OZo"/>
-                <constraint firstItem="dxU-rA-hba" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Sol-0F-qir"/>
-                <constraint firstItem="dxU-rA-hba" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="eJB-Ut-gE2"/>
+                <constraint firstItem="dxU-rA-hba" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="2" id="Sol-0F-qir"/>
+                <constraint firstItem="dxU-rA-hba" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-2" id="eJB-Ut-gE2"/>
                 <constraint firstItem="pp5-jg-ADD" firstAttribute="centerY" secondItem="dxU-rA-hba" secondAttribute="centerY" multiplier="1.5" id="mfE-sq-gaB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

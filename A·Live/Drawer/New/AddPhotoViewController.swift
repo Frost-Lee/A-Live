@@ -28,6 +28,12 @@ class AddPhotoViewController: UIViewController {
             albumCollectionView.reloadData()
         }
     }
+    var selectedAlbum: Int = 0 {
+        didSet {
+            albumCollectionView.reloadItems(at: [IndexPath(row: selectedAlbum, section: 0),
+                                                 IndexPath(row: oldValue, section: 0)])
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +60,17 @@ extension AddPhotoViewController: UICollectionViewDataSource, UICollectionViewDe
         let cell = albumCollectionView.dequeueReusableCell(withReuseIdentifier:
             "albumCollectionViewCell", for: indexPath) as! AlbumCollectionViewCell
         cell.album = albums[indexPath.row]
+        if indexPath.row == selectedAlbum {
+            cell.highLight()
+        } else {
+            cell.dehighLight()
+        }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedAlbum = indexPath.row
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout
