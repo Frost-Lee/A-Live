@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Photos
+import CoreServices
 
 class AddPhotoViewController: UIViewController {
 
@@ -35,6 +37,9 @@ class AddPhotoViewController: UIViewController {
         }
     }
     
+    private var liveVideo: PHAssetResource? = nil
+    private var shouldLiveVideoSaved: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         albums = ALDataManager.defaultManager.fetchAlbums(with: nil, completion: nil)
@@ -45,8 +50,11 @@ class AddPhotoViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        let videoURL = shouldLiveVideoSaved ? ALDataManager.defaultManager.saveVideo(resource: liveVideo) : nil
         ALDataManager.defaultManager.addPhoto(to: albums[selectedAlbum].albumIdentifier!, titled:
-            photoTitleTextField.text!, photo: photoImageView.image!, index: albums[selectedAlbum].contains!.count, description: photoDescriptionTextField.text!, liveVideoURL: nil)
+            photoTitleTextField.text!, photo: photoImageView.image!, index:
+            albums[selectedAlbum].contains!.count, description: photoDescriptionTextField.text!,
+                                                   liveVideoURL: videoURL)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -54,7 +62,13 @@ class AddPhotoViewController: UIViewController {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = [kUTTypeLivePhoto as String, kUTTypeImage as String]
         self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    private func fetchImage(with path: String) -> UIImage {
+        let data = try! Data(contentsOf: URL(fileURLWithPath: path))
+        return UIImage(data: data)!
     }
     
 }
@@ -103,8 +117,21 @@ extension AddPhotoViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo
         info: [UIImagePickerController.InfoKey : Any]) {
-        let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        photoImageView.image = selectedImage
+        shouldLiveVideoSaved = false
+        if let livePhoto = info[UIImagePickerController.InfoKey.livePhoto] as? PHLivePhoto {
+            let assetResources = PHAssetResource.assetResources(for: livePhoto)
+            for resource in assetResources {
+                if resource.type == .photo {
+                    photoImageView.image = ALDataManager.defaultManager.getPhoto(from: resource)
+                } else if resource.type == .pairedVideo {
+                    liveVideo = resource
+                    shouldLiveVideoSaved = true
+                }
+            }
+        } else {
+            let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            photoImageView.image = selectedImage
+        }
         dismiss(animated: true, completion: nil)
     }
 }

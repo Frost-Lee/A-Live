@@ -32,7 +32,7 @@ class CurrentAlbumView: UIView {
             UIView.transition(with: keyPhotoView, duration: 0.25, options:
                 UIView.AnimationOptions.transitionCrossDissolve, animations:
                 {self.keyPhotoView.image = ALDataManager.defaultManager
-                    .getPhoto(with: self.album.keyPhotoPath!)}, completion: nil)
+                    .fetchPhoto(with: self.album.keyPhotoPath!)}, completion: nil)
             UIView.transition(with: titleLabel, duration: 0.25, options:
                 UIView.AnimationOptions.transitionCrossDissolve, animations:
                 {self.titleLabel.attributedText = NSAttributedString(string: self.album.albumTitle!, attributes:

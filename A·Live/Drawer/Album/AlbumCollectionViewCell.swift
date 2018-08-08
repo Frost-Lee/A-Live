@@ -31,7 +31,7 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     
     var album: Album! {
         didSet {
-            keyPhotoView.image = ALDataManager.defaultManager.getPhoto(with: album.keyPhotoPath!)
+            keyPhotoView.image = ALDataManager.defaultManager.fetchPhoto(with: album.keyPhotoPath!)
             titleLabel.attributedText = NSAttributedString(string: album.albumTitle!, attributes:
                 ALTheme.albumTitleTextAttribute)
         }

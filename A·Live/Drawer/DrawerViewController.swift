@@ -31,6 +31,7 @@ class DrawerViewController: UIViewController {
 
 
 extension DrawerViewController: DrawerDelegate {
+    
     func shouldLaunchAddPhotoController() {
         let storyboard = UIStoryboard(name: "AddPhotoViewController", bundle: Bundle.main)
         self.present(storyboard.instantiateInitialViewController()!, animated: true, completion: nil)
@@ -41,6 +42,7 @@ extension DrawerViewController: DrawerDelegate {
         self.present(storyboard.instantiateInitialViewController()!, animated: true, completion: nil)
     }
     
-    func shouldLaunchAlbumDetailController(with album: Album) {
+    func shouldBeginTracking(with album: Album) {
+        ARWindowViewController.sharedInstance.currentAlbum = album
     }
 }

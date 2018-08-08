@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Photos
 
 class ALDataManager {
     
@@ -39,7 +40,7 @@ class ALDataManager {
         newPhoto.photoTitle = title
         newPhoto.indexInAlbum = Int32(index)
         newPhoto.photoPath = savePhoto(photo: photo)
-        newPhoto.liveVideoPath = (liveVideoURL != nil) ? saveVideo(videoURL: liveVideoURL!) : ""
+        newPhoto.liveVideoPath = (liveVideoURL != nil) ? liveVideoURL!.path : ""
         newPhoto.photoDescription = description ?? ""
         newPhoto.belongTo = fetchAlbums(with: album) { album in
             album.contains?.adding(newPhoto)
@@ -103,8 +104,19 @@ class ALDataManager {
         return fetchedAlbums
     }
     
-    func getPhoto(with path: String) -> UIImage {
+    func fetchPhoto(with path: String) -> UIImage {
         let imageData = try! Data(contentsOf: URL(fileURLWithPath: path))
+        return UIImage(data: imageData)!
+    }
+    
+    func getPhoto(from resource: PHAssetResource) -> UIImage {
+        let tempDirectory = URL(fileURLWithPath: NSTemporaryDirectory() + UUID().uuidString)
+        PHAssetResourceManager.default().writeData(for: resource, toFile: tempDirectory, options: nil) {
+            (error) in
+            // Error handler here
+        }
+        let imageData = try! Data(contentsOf: tempDirectory)
+        discardItem(with: tempDirectory)
         return UIImage(data: imageData)!
     }
     
@@ -116,18 +128,27 @@ class ALDataManager {
         let photoIdentifier = "/" + UUID().uuidString + ".jpeg"
         let imageData = photo.jpegData(compressionQuality: ALDataManager.photoQuality)
         try? imageData?.write(to: URL(fileURLWithPath: ALDataManager.photoDirectory + photoIdentifier))
+        
         return ALDataManager.photoDirectory + photoIdentifier
     }
     
-    private func saveVideo(videoURL: URL) -> String {
-        if !FileManager.default.fileExists(atPath: ALDataManager.liveVideoDirectory) {
-            try! FileManager.default.createDirectory(atPath: ALDataManager.liveVideoDirectory,
-                                                     withIntermediateDirectories: true, attributes: nil)
+    func saveVideo(resource: PHAssetResource?) -> URL? {
+        if resource == nil {
+            return nil
+        } else {
+            let url = URL(fileURLWithPath: ALDataManager.liveVideoDirectory + "/" + resource!.originalFilename)
+            FileManager.default.createFile(atPath: url.path, contents: nil, attributes: nil)
+            PHAssetResourceManager.default().writeData(for: resource!, toFile: url, options: nil) {
+                (error) in
+                // Error handler here
+            }
+            print(FileManager.default.fileExists(atPath: url.path))
+            return url
         }
-        let videoIdentifier = "/" + UUID().uuidString
-        try! FileManager.default.copyItem(at: videoURL, to: URL(fileURLWithPath:
-            ALDataManager.liveVideoDirectory + videoIdentifier))
-        return ALDataManager.liveVideoDirectory + videoIdentifier
+    }
+    
+    func discardItem(with url: URL) {
+        try? FileManager.default.removeItem(at: url)
     }
     
     private func removePhoto(with path: String) {

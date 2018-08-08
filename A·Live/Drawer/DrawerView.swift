@@ -11,7 +11,7 @@ import UIKit
 protocol DrawerDelegate {
     func shouldLaunchAddPhotoController()
     func shouldLaunchAddAlbumController()
-    func shouldLaunchAlbumDetailController(with album: Album)
+    func shouldBeginTracking(with album: Album)
 }
 
 
@@ -75,6 +75,6 @@ extension DrawerView: NewDelegate {
 
 extension DrawerView: AlbumDelegate {
     func albumDidSelected(album: Album) {
-        delegate?.shouldLaunchAlbumDetailController(with: album)
+        delegate?.shouldBeginTracking(with: album)
     }
 }
