@@ -57,14 +57,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "A&#xb7;Live/Drawer/New/AddPhotoViewController.swift"
-            timestampString = "555414348.036068"
+            filePath = "A&#xb7;Live/ALFoundation/ALDataManager.swift"
+            timestampString = "555415835.82125"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
-            landmarkType = "7">
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "ALDataManager"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "A&#xb7;Live.ALDataManager.saveVideo(resource: Swift.Optional&lt;__C.PHAssetResource&gt;) -&gt; Swift.Optional&lt;Foundation.URL&gt;"
+                  moduleName = "A&#xb7;Live"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/licanchen/Desktop/A%C2%B7Live/A%C2%B7Live/ALFoundation/ALDataManager.swift"
+                  timestampString = "555415836.066479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "1464">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in A&#xb7;Live.ALDataManager.saveVideo(resource: Swift.Optional&lt;__C.PHAssetResource&gt;) -&gt; Swift.Optional&lt;Foundation.URL&gt;"
+                  moduleName = "A&#xb7;Live"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/licanchen/Desktop/A%C2%B7Live/A%C2%B7Live/ALFoundation/ALDataManager.swift"
+                  timestampString = "555415836.0715981"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -73,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "A&#xb7;Live/Drawer/New/AddPhotoViewController.swift"
-            timestampString = "555414348.040023"
+            filePath = "A&#xb7;Live/ALFoundation/ALDataManager.swift"
+            timestampString = "555415836.486555"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "doneButtonTapped(_:)"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "discardItem(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A&#xb7;Live/ALFoundation/ALDataManager.swift"
-            timestampString = "555414348.040283"
+            timestampString = "555415838.302482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
             endingLineNumber = "146"
-            landmarkName = "saveVideo(resource:)"
+            landmarkName = "savePhoto(photo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +138,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "A&#xb7;Live/ALFoundation/ALDataManager.swift"
-            timestampString = "555414348.05395"
+            timestampString = "555415838.839969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "145"
             endingLineNumber = "145"
-            landmarkName = "saveVideo(resource:)"
+            landmarkName = "savePhoto(photo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "A&#xb7;Live/ALFoundation/ALDataManager.swift"
+            timestampString = "555415839.360952"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "savePhoto(photo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "A&#xb7;Live/ALFoundation/ALDataManager.swift"
+            timestampString = "555415840.050419"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "savePhoto(photo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "A&#xb7;Live/ALFoundation/ALDataManager.swift"
+            timestampString = "555415841.493531"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "savePhoto(photo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

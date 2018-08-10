@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol DrawerTabDelegate {
+protocol DrawerTabDelegate: class {
     func tabDidTapped(at index: Int)
 }
 
@@ -35,7 +35,7 @@ class DrawerTabView: UIView {
     }
     @IBOutlet weak var selectionIndicatorView: UIView!
     
-    var delegate: DrawerTabDelegate?
+    weak var delegate: DrawerTabDelegate?
     
     private var newSelectLockFrame: CGRect!
     private var albumSelectLockFrame: CGRect!

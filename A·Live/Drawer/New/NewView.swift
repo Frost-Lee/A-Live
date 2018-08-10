@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol NewDelegate {
+protocol NewDelegate: class {
     func addPhotoButtonDidTapped()
     func addAlbumButtonDidTapped()
 }
@@ -27,7 +27,7 @@ class NewView: UIView {
         }
     }
     
-    var delegate: NewDelegate?
+    weak var delegate: NewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

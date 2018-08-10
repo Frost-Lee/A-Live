@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AlbumDelegate {
+protocol AlbumDelegate: class {
     func albumDidSelected(album: Album)
 }
 
@@ -37,7 +37,7 @@ class AlbumView: UIView {
         }
     }
     
-    var delegate: AlbumDelegate?
+    weak var delegate: AlbumDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

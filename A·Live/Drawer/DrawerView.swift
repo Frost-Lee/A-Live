@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol DrawerDelegate {
+protocol DrawerDelegate: class {
     func shouldLaunchAddPhotoController()
     func shouldLaunchAddAlbumController()
     func shouldBeginTracking(with album: Album)
@@ -40,7 +40,7 @@ class DrawerView: UIView {
         }
     }
     
-    var delegate: DrawerDelegate?
+    weak var delegate: DrawerDelegate?
 
 }
 

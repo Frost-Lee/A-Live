@@ -120,18 +120,6 @@ class ALDataManager {
         return UIImage(data: imageData)!
     }
     
-    private func savePhoto(photo: UIImage) -> String {
-        if !FileManager.default.fileExists(atPath: ALDataManager.photoDirectory) {
-            try! FileManager.default.createDirectory(atPath: ALDataManager.photoDirectory,
-                                                     withIntermediateDirectories: true, attributes: nil)
-        }
-        let photoIdentifier = "/" + UUID().uuidString + ".jpeg"
-        let imageData = photo.jpegData(compressionQuality: ALDataManager.photoQuality)
-        try? imageData?.write(to: URL(fileURLWithPath: ALDataManager.photoDirectory + photoIdentifier))
-        
-        return ALDataManager.photoDirectory + photoIdentifier
-    }
-    
     func saveVideo(resource: PHAssetResource?) -> URL? {
         if resource == nil {
             return nil
@@ -149,6 +137,18 @@ class ALDataManager {
     
     func discardItem(with url: URL) {
         try? FileManager.default.removeItem(at: url)
+    }
+    
+    private func savePhoto(photo: UIImage) -> String {
+        if !FileManager.default.fileExists(atPath: ALDataManager.photoDirectory) {
+            try! FileManager.default.createDirectory(atPath: ALDataManager.photoDirectory,
+                                                     withIntermediateDirectories: true, attributes: nil)
+        }
+        let photoIdentifier = "/" + UUID().uuidString + ".jpeg"
+        let imageData = photo.jpegData(compressionQuality: ALDataManager.photoQuality)
+        try? imageData?.write(to: URL(fileURLWithPath: ALDataManager.photoDirectory + photoIdentifier))
+        
+        return ALDataManager.photoDirectory + photoIdentifier
     }
     
     private func removePhoto(with path: String) {
