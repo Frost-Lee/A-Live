@@ -121,11 +121,14 @@ class ALDataManager {
     }
     
     func saveVideo(resource: PHAssetResource?) -> URL? {
+        if !FileManager.default.fileExists(atPath: ALDataManager.liveVideoDirectory) {
+            try! FileManager.default.createDirectory(atPath: ALDataManager.liveVideoDirectory,
+                                                     withIntermediateDirectories: true, attributes: nil)
+        }
         if resource == nil {
             return nil
         } else {
             let url = URL(fileURLWithPath: ALDataManager.liveVideoDirectory + "/" + resource!.originalFilename)
-            FileManager.default.createFile(atPath: url.path, contents: nil, attributes: nil)
             PHAssetResourceManager.default().writeData(for: resource!, toFile: url, options: nil) {
                 (error) in
                 // Error handler here
@@ -147,7 +150,6 @@ class ALDataManager {
         let photoIdentifier = "/" + UUID().uuidString + ".jpeg"
         let imageData = photo.jpegData(compressionQuality: ALDataManager.photoQuality)
         try? imageData?.write(to: URL(fileURLWithPath: ALDataManager.photoDirectory + photoIdentifier))
-        
         return ALDataManager.photoDirectory + photoIdentifier
     }
     

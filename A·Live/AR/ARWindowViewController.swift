@@ -41,7 +41,6 @@ class ARWindowViewController: UIViewController {
                 print(FileManager.default.fileExists(atPath: videoPath))
                 videoPlayer = AVPlayer(url: URL(fileURLWithPath: videoPath))
                 setupARConfiguration(with: [ALDataManager.defaultManager.fetchPhoto(with: photo.photoPath!)])
-                videoPlayer.play()
             }
         }
     }
