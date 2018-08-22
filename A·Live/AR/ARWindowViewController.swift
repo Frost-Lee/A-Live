@@ -37,8 +37,6 @@ class ARWindowViewController: UIViewController {
     private func currentTrackingPhotoChanged() {
         if let photo = currentTrackingPhoto {
             if let videoPath = photo.liveVideoPath {
-                print("The video path is \(videoPath)")
-                print(FileManager.default.fileExists(atPath: videoPath))
                 videoPlayer = AVPlayer(url: URL(fileURLWithPath: videoPath))
                 setupARConfiguration(with: [ALDataManager.defaultManager.fetchPhoto(with: photo.photoPath!)])
             }

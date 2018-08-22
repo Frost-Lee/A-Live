@@ -133,7 +133,6 @@ class ALDataManager {
                 (error) in
                 // Error handler here
             }
-            print(FileManager.default.fileExists(atPath: url.path))
             return url
         }
     }
