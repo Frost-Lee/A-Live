@@ -54,6 +54,13 @@ class ARWindowViewController: UIViewController {
         configuration.maximumNumberOfTrackedImages = images.count
         sceneView.session.run(configuration)
     }
+    
+    private func prepareFloatingCard() -> UIImage {
+        let floatingCardnib = UINib(nibName: "ARFloatingCardView", bundle: Bundle.main)
+        let floatingCardView = floatingCardnib.instantiate(withOwner: self, options: nil).first as! ARFloatingCardView
+        floatingCardView.setupTitle(with: currentTrackingPhoto?.photoTitle ?? "Nothing to show.")
+        return floatingCardView.viewImage()!
+    }
 
 }
 
@@ -64,12 +71,37 @@ extension ARWindowViewController: ARSCNViewDelegate {
         if let imageAnchor = anchor as? ARImageAnchor {
             let imageSize = imageAnchor.referenceImage.physicalSize
             let plane = SCNPlane(width: imageSize.width, height: imageSize.height)
-            plane.firstMaterial?.diffuse.contents = videoPlayer
-            videoPlayer.play()
+            plane.firstMaterial?.diffuse.contents = self.videoPlayer
+            self.videoPlayer.play()
             let planeNode = SCNNode(geometry: plane)
             planeNode.eulerAngles.x = -.pi / 2
             node.addChildNode(planeNode)
         }
         return node
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARImageAnchor else { return }
+        
+        // 2
+        let width = CGFloat(planeAnchor.referenceImage.physicalSize.width / 2.0)
+        let height = CGFloat(planeAnchor.referenceImage.physicalSize.width / 2.0)
+        let plane = SCNPlane(width: width, height: height)
+        
+        // 3
+        plane.materials.first?.diffuse.contents = prepareFloatingCard()
+        
+        // 4
+        let planeNode = SCNNode(geometry: plane)
+        
+        // 5
+        let x = CGFloat(planeAnchor.referenceImage.physicalSize.width)
+        let y = CGFloat(planeAnchor.referenceImage.physicalSize.width)
+        let z = CGFloat(0)
+        planeNode.position = SCNVector3(x,y,z)
+        planeNode.eulerAngles.x = -.pi / 2
+        
+        // 6
+        node.addChildNode(planeNode)
     }
 }

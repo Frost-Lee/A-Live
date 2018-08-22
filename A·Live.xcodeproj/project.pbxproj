@@ -16,6 +16,9 @@
 		3A23B8B1211199DE006A9C95 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23B8B0211199DE006A9C95 /* DrawerViewController.swift */; };
 		3A2638EE21172DBE00A0DDA3 /* CurrentAlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2638ED21172DBE00A0DDA3 /* CurrentAlbumView.swift */; };
 		3A2638F021172DCA00A0DDA3 /* CurrentAlbumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2638EF21172DCA00A0DDA3 /* CurrentAlbumView.xib */; };
+		3A4A018A212D7C2B00FD76B4 /* ARFloatingCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4A0189212D7C2B00FD76B4 /* ARFloatingCardView.xib */; };
+		3A4A018C212D7C5500FD76B4 /* ARFloatingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4A018B212D7C5500FD76B4 /* ARFloatingCardView.swift */; };
+		3A56BF6E212D7EF80005ABC6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56BF6D212D7EF80005ABC6 /* Extensions.swift */; };
 		3A6045C62112D9540077EE08 /* ALTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6045C52112D9540077EE08 /* ALTheme.swift */; };
 		3A6DF7422111E38C00DA5CD2 /* DrawerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6DF7412111E38C00DA5CD2 /* DrawerView.xib */; };
 		3A6DF7442111E39B00DA5CD2 /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DF7432111E39B00DA5CD2 /* DrawerView.swift */; };
@@ -50,6 +53,9 @@
 		3A23B8B0211199DE006A9C95 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		3A2638ED21172DBE00A0DDA3 /* CurrentAlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlbumView.swift; sourceTree = "<group>"; };
 		3A2638EF21172DCA00A0DDA3 /* CurrentAlbumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentAlbumView.xib; sourceTree = "<group>"; };
+		3A4A0189212D7C2B00FD76B4 /* ARFloatingCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ARFloatingCardView.xib; sourceTree = "<group>"; };
+		3A4A018B212D7C5500FD76B4 /* ARFloatingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFloatingCardView.swift; sourceTree = "<group>"; };
+		3A56BF6D212D7EF80005ABC6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3A6045C52112D9540077EE08 /* ALTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTheme.swift; sourceTree = "<group>"; };
 		3A6DF7412111E38C00DA5CD2 /* DrawerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerView.xib; sourceTree = "<group>"; };
 		3A6DF7432111E39B00DA5CD2 /* DrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				3A23B8AE211199BD006A9C95 /* ARWindowViewController.swift */,
+				3A4A0189212D7C2B00FD76B4 /* ARFloatingCardView.xib */,
+				3A4A018B212D7C5500FD76B4 /* ARFloatingCardView.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 			children = (
 				3A6045C52112D9540077EE08 /* ALTheme.swift */,
 				3A19F6E62113FAE90002200B /* ALDataManager.swift */,
+				3A56BF6D212D7EF80005ABC6 /* Extensions.swift */,
 				3A19F6E32113F9F70002200B /* ALDataModel.xcdatamodeld */,
 				3A19F6EA21142B1A0002200B /* Album.swift */,
 				3A19F6EB21142B1A0002200B /* Album+CoreDataProperties.swift */,
@@ -285,6 +294,7 @@
 				3A2638F021172DCA00A0DDA3 /* CurrentAlbumView.xib in Resources */,
 				3AB8854421143FB900211531 /* AlbumView.xib in Resources */,
 				3AB8854021143F4000211531 /* AddAlbumViewController.storyboard in Resources */,
+				3A4A018A212D7C2B00FD76B4 /* ARFloatingCardView.xib in Resources */,
 				3AEAA0A2210FF49100D45A01 /* Assets.xcassets in Resources */,
 				3AEAA0A0210FF48E00D45A01 /* Main.storyboard in Resources */,
 				3AE8636D2111F8B500297088 /* DrawerTabView.xib in Resources */,
@@ -333,12 +343,14 @@
 				3A19F6ED21142B1A0002200B /* Album+CoreDataProperties.swift in Sources */,
 				3A19F6EC21142B1A0002200B /* Album.swift in Sources */,
 				3A6DF7442111E39B00DA5CD2 /* DrawerView.swift in Sources */,
+				3A56BF6E212D7EF80005ABC6 /* Extensions.swift in Sources */,
 				3AB8853D21142D0600211531 /* Photo.swift in Sources */,
 				3A9CA4072112DE41004857EB /* NewView.swift in Sources */,
 				3A19F6E52113F9F70002200B /* ALDataModel.xcdatamodeld in Sources */,
 				3A1ECC6C2112F2230043E1B1 /* MainViewController.swift in Sources */,
 				3AEAA09B210FF48E00D45A01 /* AppDelegate.swift in Sources */,
 				3A6045C62112D9540077EE08 /* ALTheme.swift in Sources */,
+				3A4A018C212D7C5500FD76B4 /* ARFloatingCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
