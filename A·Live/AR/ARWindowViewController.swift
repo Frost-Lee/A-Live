@@ -57,7 +57,9 @@ class ARWindowViewController: UIViewController {
     
     private func prepareFloatingCard() -> UIImage {
         let floatingCardnib = UINib(nibName: "ARFloatingCardView", bundle: Bundle.main)
-        let floatingCardView = floatingCardnib.instantiate(withOwner: self, options: nil).first as! ARFloatingCardView
+        let floatingCardView = floatingCardnib.instantiate(withOwner: self, options: nil).first
+            as! ARFloatingCardView
+        floatingCardView.layer.cornerRadius = 5.0
         floatingCardView.setupTitle(with: currentTrackingPhoto?.photoTitle ?? "Nothing to show.")
         return floatingCardView.viewImage()!
     }
@@ -84,8 +86,8 @@ extension ARWindowViewController: ARSCNViewDelegate {
         guard let planeAnchor = anchor as? ARImageAnchor else { return }
         
         // 2
-        let width = CGFloat(planeAnchor.referenceImage.physicalSize.width / 2.0)
-        let height = CGFloat(planeAnchor.referenceImage.physicalSize.width / 2.0)
+        let width = CGFloat(planeAnchor.referenceImage.physicalSize.width)
+        let height = CGFloat(planeAnchor.referenceImage.physicalSize.height)
         let plane = SCNPlane(width: width, height: height)
         
         // 3
@@ -95,11 +97,11 @@ extension ARWindowViewController: ARSCNViewDelegate {
         let planeNode = SCNNode(geometry: plane)
         
         // 5
-        let x = CGFloat(planeAnchor.referenceImage.physicalSize.width)
-        let y = CGFloat(planeAnchor.referenceImage.physicalSize.width)
-        let z = CGFloat(0)
-        planeNode.position = SCNVector3(x,y,z)
+        var somePosition = node.position
+        somePosition.z += Float(planeAnchor.referenceImage.physicalSize.height) + 0.1
+        planeNode.position = somePosition
         planeNode.eulerAngles.x = -.pi / 2
+        planeNode.eulerAngles.y = -.pi
         
         // 6
         node.addChildNode(planeNode)
