@@ -55,13 +55,14 @@ class ARWindowViewController: UIViewController {
         sceneView.session.run(configuration)
     }
     
-    private func prepareFloatingCard() -> UIImage {
+    private func prepareFloatingCard(for physicalSize: CGSize) -> UIImage {
         let floatingCardnib = UINib(nibName: "ARFloatingCardView", bundle: Bundle.main)
         let floatingCardView = floatingCardnib.instantiate(withOwner: self, options: nil).first
             as! ARFloatingCardView
-        floatingCardView.layer.cornerRadius = 5.0
+        print(floatingCardView.frame)
         floatingCardView.setupTitle(with: currentTrackingPhoto?.photoTitle ?? "Nothing to show.")
-        return floatingCardView.viewImage()!
+        let imageSize = CGSize(width: physicalSize.width * 1000, height: physicalSize.height * 1000)
+        return floatingCardView.viewImage(for: imageSize)!
     }
 
 }
@@ -83,27 +84,20 @@ extension ARWindowViewController: ARSCNViewDelegate {
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        guard let planeAnchor = anchor as? ARImageAnchor else { return }
-        
-        // 2
-        let width = CGFloat(planeAnchor.referenceImage.physicalSize.width)
-        let height = CGFloat(planeAnchor.referenceImage.physicalSize.height)
-        let plane = SCNPlane(width: width, height: height)
-        
-        // 3
-        plane.materials.first?.diffuse.contents = prepareFloatingCard()
-        
-        // 4
-        let planeNode = SCNNode(geometry: plane)
-        
-        // 5
-        var somePosition = node.position
-        somePosition.z += Float(planeAnchor.referenceImage.physicalSize.height) + 0.1
-        planeNode.position = somePosition
-        planeNode.eulerAngles.x = -.pi / 2
-        planeNode.eulerAngles.y = -.pi
-        
-        // 6
-        node.addChildNode(planeNode)
+        if let planeAnchor = anchor as? ARImageAnchor {
+            let width = CGFloat(planeAnchor.referenceImage.physicalSize.width)
+            let height = CGFloat(planeAnchor.referenceImage.physicalSize.height)
+            let plane = SCNPlane(width: width, height: height)
+            plane.materials.first?.diffuse.contents = prepareFloatingCard(for:
+                CGSize(width: width, height: height))
+            plane.cornerRadius = 0.01
+            let planeNode = SCNNode(geometry: plane)
+            var somePosition = node.position
+            somePosition.z += Float(planeAnchor.referenceImage.physicalSize.height) + 0.02
+            planeNode.position = somePosition
+            planeNode.eulerAngles.x = -.pi / 2
+            planeNode.eulerAngles.y = -.pi
+            node.addChildNode(planeNode)
+        }
     }
 }

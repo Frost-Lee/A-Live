@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func viewImage() -> UIImage? {
+    func viewImage(for size: CGSize) -> UIImage? {
         if self.frame.width != 0 && self.frame.height != 0 {
-            UIGraphicsBeginImageContextWithOptions(self.frame.size, false, 0)
+            UIGraphicsBeginImageContextWithOptions(size, false, 0)
             self.layer.render(in: UIGraphicsGetCurrentContext()!)
             let image = UIGraphicsGetImageFromCurrentImageContext()
             return image
