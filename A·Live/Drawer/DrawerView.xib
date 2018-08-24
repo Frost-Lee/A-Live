@@ -9,9 +9,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawerView" customModule="A·Live" customModuleProvider="target">
+            <connections>
+                <outlet property="albumView" destination="jce-qV-EOl" id="gcO-5b-hu3"/>
+                <outlet property="drawerTabView" destination="c4y-M3-1nL" id="zG3-Ua-H9w"/>
+                <outlet property="gripperView" destination="TpX-gw-owE" id="UqH-jg-xqn"/>
+                <outlet property="storeView" destination="F1P-iw-xg3" id="Huj-hF-Ojk"/>
+                <outlet property="view" destination="iN0-l3-epB" id="AVE-ci-nJQ"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DrawerView" customModule="A·Live" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -30,40 +38,33 @@
                         <constraint firstAttribute="height" constant="57" id="GnK-oF-1DB"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPZ-Dz-bpv" customClass="AlbumView" customModule="A·Live" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jce-qV-EOl" customClass="AlbumView" customModule="A·Live" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="69" width="375" height="598"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0p-um-sgM" customClass="NewView" customModule="A·Live" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1P-iw-xg3" customClass="StoreView" customModule="A·Live" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="69" width="375" height="598"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="H0p-um-sgM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6Rg-Ce-bkv"/>
                 <constraint firstItem="c4y-M3-1nL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6dY-2y-lar"/>
-                <constraint firstItem="QPZ-Dz-bpv" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="9xz-3q-Jqn"/>
                 <constraint firstItem="TpX-gw-owE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="Bn0-DZ-Cnx"/>
                 <constraint firstItem="c4y-M3-1nL" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Hbl-WK-1ke"/>
-                <constraint firstItem="QPZ-Dz-bpv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="L0A-G1-ca5"/>
-                <constraint firstItem="H0p-um-sgM" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="LHW-yw-vcn"/>
-                <constraint firstItem="QPZ-Dz-bpv" firstAttribute="top" secondItem="c4y-M3-1nL" secondAttribute="bottom" id="Odx-yn-0Z2"/>
-                <constraint firstItem="H0p-um-sgM" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="P9R-eT-FzL"/>
+                <constraint firstItem="jce-qV-EOl" firstAttribute="top" secondItem="c4y-M3-1nL" secondAttribute="bottom" id="Nma-9F-ill"/>
+                <constraint firstItem="jce-qV-EOl" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="W5e-Le-fcV"/>
                 <constraint firstItem="c4y-M3-1nL" firstAttribute="top" secondItem="TpX-gw-owE" secondAttribute="bottom" id="eBq-h2-1ah"/>
-                <constraint firstItem="H0p-um-sgM" firstAttribute="top" secondItem="c4y-M3-1nL" secondAttribute="bottom" id="idd-8a-fs1"/>
-                <constraint firstItem="QPZ-Dz-bpv" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ueT-V0-neo"/>
+                <constraint firstItem="F1P-iw-xg3" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="jJm-WO-Kom"/>
+                <constraint firstItem="F1P-iw-xg3" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="jWM-2v-AGY"/>
+                <constraint firstItem="jce-qV-EOl" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="p67-KE-ifE"/>
+                <constraint firstItem="jce-qV-EOl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="puo-Wm-W8F"/>
+                <constraint firstItem="F1P-iw-xg3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="tgV-PD-Yx7"/>
+                <constraint firstItem="F1P-iw-xg3" firstAttribute="top" secondItem="c4y-M3-1nL" secondAttribute="bottom" id="yrG-o5-1Jq"/>
                 <constraint firstItem="TpX-gw-owE" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="zdJ-0i-jyZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <connections>
-                <outlet property="albumView" destination="QPZ-Dz-bpv" id="I6f-NB-AUX"/>
-                <outlet property="drawerContentView" destination="QPZ-Dz-bpv" id="JU2-Lo-NEN"/>
-                <outlet property="drawerTabView" destination="c4y-M3-1nL" id="lYd-mb-ze6"/>
-                <outlet property="gripperView" destination="TpX-gw-owE" id="caG-K5-JGv"/>
-                <outlet property="newView" destination="H0p-um-sgM" id="tEC-nI-JqX"/>
-            </connections>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>

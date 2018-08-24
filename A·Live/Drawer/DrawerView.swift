@@ -17,6 +17,7 @@ protocol DrawerDelegate: class {
 
 class DrawerView: UIView {
 
+    @IBOutlet var view: UIView!
     @IBOutlet weak var drawerTabView: DrawerTabView! {
         didSet {
             drawerTabView.delegate = self
@@ -28,19 +29,20 @@ class DrawerView: UIView {
             gripperView.backgroundColor = UIColor(red: 195/255, green: 198/255, blue: 196/255, alpha: 1)
         }
     }
-    @IBOutlet weak var drawerContentView: UIView!
-    @IBOutlet weak var newView: NewView! {
-        didSet {
-            newView.delegate = self
-        }
-    }
-    @IBOutlet weak var albumView: AlbumView! {
-        didSet {
-            albumView.delegate = self
-        }
+    @IBOutlet weak var albumView: AlbumView!
+    @IBOutlet weak var storeView: StoreView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        Bundle.main.loadNibNamed("DrawerView", owner: self, options: nil)
+        self.addSubview(view)
     }
     
-    weak var delegate: DrawerDelegate?
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        Bundle.main.loadNibNamed("DrawerView", owner: self, options: nil)
+        self.addSubview(view)
+    }
 
 }
 
@@ -49,32 +51,13 @@ extension DrawerView: DrawerTabDelegate {
     func tabDidTapped(at index: Int) {
         switch index {
         case 0:
-            newView.isHidden = false
-            albumView.isHidden = true
-        case 1:
-            newView.isHidden = true
             albumView.isHidden = false
-            albumView.reloadAlbums()
+            storeView.isHidden = true
+        case 1:
+            albumView.isHidden = true
+            storeView.isHidden = false
         default:
             break
         }
-    }
-}
-
-
-extension DrawerView: NewDelegate {
-    func addPhotoButtonDidTapped() {
-        delegate?.shouldLaunchAddPhotoController()
-    }
-    
-    func addAlbumButtonDidTapped() {
-        delegate?.shouldLaunchAddAlbumController()
-    }
-}
-
-
-extension DrawerView: AlbumDelegate {
-    func albumDidSelected(album: Album) {
-        delegate?.shouldBeginTracking(with: album)
     }
 }

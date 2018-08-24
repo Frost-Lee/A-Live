@@ -93,17 +93,99 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgO-Ye-yPA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                             </arscnView>
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXc-eW-Yxv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DqN-9V-mVu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cme-8X-Mfu">
+                                <rect key="frame" x="314" y="20" width="45" height="45"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pPv-QW-RLO">
+                                    <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPQ-Zj-7nj">
+                                            <rect key="frame" x="7.5" y="0.0" width="30" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="bdC-nM-bg0"/>
+                                            </constraints>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZPQ-Zj-7nj" firstAttribute="top" secondItem="pPv-QW-RLO" secondAttribute="top" id="H7G-Vf-BdN"/>
+                                        <constraint firstItem="ZPQ-Zj-7nj" firstAttribute="centerX" secondItem="pPv-QW-RLO" secondAttribute="centerX" id="TB4-G0-c12"/>
+                                        <constraint firstAttribute="bottom" secondItem="ZPQ-Zj-7nj" secondAttribute="bottom" id="lyK-EP-6GZ"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="GGL-0g-G3S"/>
+                                    <constraint firstAttribute="height" constant="45" id="tJv-Cg-OWj"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68J-TH-Og9">
+                                <rect key="frame" x="16" y="20" width="282" height="45"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7T0-FI-YPe">
+                                    <rect key="frame" x="0.0" y="0.0" width="282" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKZ-l9-r6M">
+                                            <rect key="frame" x="8" y="8" width="266" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="KKZ-l9-r6M" secondAttribute="bottom" constant="8" id="2KK-sM-3yb"/>
+                                        <constraint firstItem="KKZ-l9-r6M" firstAttribute="leading" secondItem="7T0-FI-YPe" secondAttribute="leading" constant="8" id="fsZ-lT-AsW"/>
+                                        <constraint firstAttribute="trailing" secondItem="KKZ-l9-r6M" secondAttribute="trailing" constant="8" id="iPR-Bz-AZ3"/>
+                                        <constraint firstItem="KKZ-l9-r6M" firstAttribute="top" secondItem="7T0-FI-YPe" secondAttribute="top" constant="8" id="mzh-j4-5u4"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Dyr-Qi-HSm"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wgO-Ye-yPA" firstAttribute="leading" secondItem="A8A-wv-wIa" secondAttribute="leading" id="0LO-S5-irh"/>
+                            <constraint firstItem="68J-TH-Og9" firstAttribute="leading" secondItem="A8A-wv-wIa" secondAttribute="leading" constant="16" id="2vj-on-5ma"/>
+                            <constraint firstItem="A8A-wv-wIa" firstAttribute="trailing" secondItem="cme-8X-Mfu" secondAttribute="trailing" constant="16" id="Dm9-4Z-HwI"/>
                             <constraint firstItem="wgO-Ye-yPA" firstAttribute="bottom" secondItem="A8A-wv-wIa" secondAttribute="bottom" id="LsG-y0-P5u"/>
+                            <constraint firstItem="IXc-eW-Yxv" firstAttribute="top" secondItem="A8A-wv-wIa" secondAttribute="top" id="Q2d-KD-rhs"/>
+                            <constraint firstAttribute="bottom" secondItem="IXc-eW-Yxv" secondAttribute="bottom" id="Vpi-J8-rqa"/>
+                            <constraint firstItem="cme-8X-Mfu" firstAttribute="leading" secondItem="68J-TH-Og9" secondAttribute="trailing" constant="16" id="b13-9d-kEI"/>
                             <constraint firstItem="wgO-Ye-yPA" firstAttribute="trailing" secondItem="A8A-wv-wIa" secondAttribute="trailing" id="bUu-qE-DPF"/>
+                            <constraint firstItem="68J-TH-Og9" firstAttribute="top" secondItem="A8A-wv-wIa" secondAttribute="top" constant="20" id="ckQ-h6-7lW"/>
+                            <constraint firstItem="IXc-eW-Yxv" firstAttribute="trailing" secondItem="A8A-wv-wIa" secondAttribute="trailing" id="fK7-ns-AH8"/>
                             <constraint firstItem="wgO-Ye-yPA" firstAttribute="top" secondItem="A8A-wv-wIa" secondAttribute="top" id="iQy-NR-cGH"/>
+                            <constraint firstItem="IXc-eW-Yxv" firstAttribute="leading" secondItem="A8A-wv-wIa" secondAttribute="leading" id="kQX-A4-SVY"/>
+                            <constraint firstItem="cme-8X-Mfu" firstAttribute="top" secondItem="A8A-wv-wIa" secondAttribute="top" constant="20" id="z2N-0J-dbx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A8A-wv-wIa"/>
                     </view>
                     <connections>
+                        <outlet property="darkBackgroundBlurView" destination="IXc-eW-Yxv" id="6ib-6C-6ik"/>
                         <outlet property="sceneView" destination="wgO-Ye-yPA" id="W83-58-v34"/>
                     </connections>
                 </viewController>
