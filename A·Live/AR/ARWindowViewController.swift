@@ -13,10 +13,10 @@ class ARWindowViewController: UIViewController {
 
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var darkBackgroundBlurView: UIVisualEffectView!
+    @IBOutlet weak var currentAlbumTitleLabel: UILabel!
     
     static var sharedInstance: ARWindowViewController!
-    
-    private var videoPlayer: AVPlayer = AVPlayer(url: Bundle.main.url(forResource: "SunsetShanghai", withExtension: ".mov")!)
+    private var videoPlayer: AVPlayer = AVPlayer(url: Bundle.main.url(forResource: "EPXi", withExtension: ".mov")!)
     private var trackingImageSet: Set<ARReferenceImage> = ARReferenceImage.referenceImages(inGroupNamed: "DemoResources", bundle: Bundle.main)!
     
     override func viewDidLoad() {
@@ -43,16 +43,6 @@ class ARWindowViewController: UIViewController {
                 self.darkBackgroundBlurView.alpha = 0
         }, completion: nil)
     }
-    
-//    private func prepareFloatingCard(for physicalSize: CGSize) -> UIImage {
-//        let floatingCardnib = UINib(nibName: "ARFloatingCardView", bundle: Bundle.main)
-//        let floatingCardView = floatingCardnib.instantiate(withOwner: self, options: nil).first
-//            as! ARFloatingCardView
-//        print(floatingCardView.frame)
-//        floatingCardView.setupTitle(with: currentTrackingPhoto?.photoTitle ?? "Nothing to show.")
-//        let imageSize = CGSize(width: physicalSize.width * 1000, height: physicalSize.height * 1000)
-//        return floatingCardView.viewImage(for: imageSize)!
-//    }
 
 }
 
@@ -62,40 +52,28 @@ extension ARWindowViewController: ARSCNViewDelegate {
         let node = SCNNode()
         if let imageAnchor = anchor as? ARImageAnchor {
             let imageSize = imageAnchor.referenceImage.physicalSize
-            let plane = SCNPlane(width: imageSize.width, height: imageSize.height)
-            plane.firstMaterial?.diffuse.contents = self.videoPlayer
-            self.videoPlayer.play()
-            let planeNode = SCNNode(geometry: plane)
-            planeNode.eulerAngles.x = -.pi / 2
-            node.addChildNode(planeNode)
-            let phoneScene = SCNScene(named: "Phone_01.scn")
-            let phoneNode = phoneScene?.rootNode.childNode(withName: "parentNode", recursively: true)!
-            phoneNode?.position = SCNVector3Zero
-            phoneNode?.position.z = 0.15
-            phoneNode?.position.y += Float(imageSize.height)
-            let rotationAction = SCNAction.rotateBy(x: 0, y: 0.5, z: 0, duration: 1)
-            let inifiniteAction = SCNAction.repeatForever(rotationAction)
-            phoneNode?.scale = SCNVector3(0.02, 0.02, 0.02)
-            phoneNode!.runAction(inifiniteAction)
-            node.addChildNode(phoneNode!)
+            if imageAnchor.referenceImage.name == "EmperorXi" {
+                let plane = SCNPlane(width: imageSize.width, height: imageSize.height)
+                plane.firstMaterial?.diffuse.contents = self.videoPlayer
+                self.videoPlayer.play()
+                let planeNode = SCNNode(geometry: plane)
+                planeNode.eulerAngles.x = -.pi / 2
+                node.addChildNode(planeNode)
+            } else if imageAnchor.referenceImage.name == "Pixel" {
+                let phoneScene = SCNScene(named: "Phone_01.scn")
+                let phoneNode = phoneScene?.rootNode.childNode(withName: "parentNode", recursively: true)!
+                phoneNode?.position = SCNVector3Zero
+                phoneNode?.position.y = 0.05
+                phoneNode?.position.z += Float(imageSize.height) / 2.0
+                let adjustRotation = SCNAction.rotateBy(x: -.pi / 2, y: 0, z: 0, duration: 0.01)
+                phoneNode?.runAction(adjustRotation)
+                let rotationAction = SCNAction.rotateBy(x: 0, y: 0, z: 0.5, duration: 1)
+                let inifiniteAction = SCNAction.repeatForever(rotationAction)
+                phoneNode?.scale = SCNVector3(0.015, 0.015, 0.015)
+                phoneNode!.runAction(inifiniteAction)
+                node.addChildNode(phoneNode!)
+            }
         }
         return node
     }
-    
-//    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-//        if let planeAnchor = anchor as? ARImageAnchor {
-//            let width = CGFloat(planeAnchor.referenceImage.physicalSize.width)
-//            let height = CGFloat(planeAnchor.referenceImage.physicalSize.height)
-//            let plane = SCNPlane(width: width, height: height)
-//            plane.materials.first?.diffuse.contents = UIImage(named: "FloatCard")
-//            plane.cornerRadius = 0.01
-//            let planeNode = SCNNode(geometry: plane)
-//            var somePosition = node.position
-//            somePosition.z += Float(planeAnchor.referenceImage.physicalSize.height) + 0.02
-//            planeNode.position = somePosition
-//            planeNode.eulerAngles.x = -.pi / 2
-//            planeNode.eulerAngles.y = -.pi
-//            node.addChildNode(planeNode)
-//        }
-//    }
 }

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoreView" customModule="A·Live" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="Olm-d5-sDG" id="ay0-A4-TLL"/>
                 <outlet property="storeScrollView" destination="i4T-ho-qHU" id="aOW-ww-k5M"/>
                 <outlet property="view" destination="iN0-l3-epB" id="mMQ-ia-wKz"/>
             </connections>
@@ -20,16 +21,34 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.10000000000000001" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="i4T-ho-qHU">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.10000000000000001" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="i4T-ho-qHU">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </scrollView>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Olm-d5-sDG">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRT-t3-Aqz">
+                    <rect key="frame" x="0.0" y="20" width="375" height="72"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="72" id="5lw-Rs-9fQ"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="albumButtonTapped:" destination="-1" eventType="touchUpInside" id="AIR-rL-euR"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="i4T-ho-qHU" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="FW4-Sd-uWl"/>
-                <constraint firstItem="i4T-ho-qHU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hGI-lT-fmH"/>
-                <constraint firstItem="i4T-ho-qHU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xWA-Lb-uMp"/>
-                <constraint firstItem="i4T-ho-qHU" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ziD-nd-GmO"/>
+                <constraint firstItem="QRT-t3-Aqz" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="3zb-a7-dM3"/>
+                <constraint firstItem="QRT-t3-Aqz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="I2y-rQ-rdm"/>
+                <constraint firstItem="QRT-t3-Aqz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="tdK-Cf-rVW"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -5,7 +5,10 @@
   },
   "resources" : [
     {
-      "filename" : "SunsetShanghai.arreferenceimage"
+      "filename" : "EmperorXi.arreferenceimage"
+    },
+    {
+      "filename" : "Pixel.arreferenceimage"
     }
   ]
 }

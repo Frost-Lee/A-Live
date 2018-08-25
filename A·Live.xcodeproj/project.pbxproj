@@ -14,9 +14,11 @@
 		3A1ECC6C2112F2230043E1B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1ECC6B2112F2230043E1B1 /* MainViewController.swift */; };
 		3A23B8AF211199BD006A9C95 /* ARWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23B8AE211199BD006A9C95 /* ARWindowViewController.swift */; };
 		3A23B8B1211199DE006A9C95 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23B8B0211199DE006A9C95 /* DrawerViewController.swift */; };
+		3A4363A9213038D300B693A3 /* EPXi.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3A4363A8213038D300B693A3 /* EPXi.mov */; };
 		3A56BF6E212D7EF80005ABC6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56BF6D212D7EF80005ABC6 /* Extensions.swift */; };
+		3A5CDDA2212FE4D5009130E3 /* AlbumPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5CDDA1212FE4D5009130E3 /* AlbumPopView.xib */; };
+		3A5CDDA4212FE4E0009130E3 /* AlbumPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CDDA3212FE4E0009130E3 /* AlbumPopView.swift */; };
 		3A6045C62112D9540077EE08 /* ALTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6045C52112D9540077EE08 /* ALTheme.swift */; };
-		3A647EDD212EDD3900090510 /* SunsetShanghai.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3A647EDC212EDD3900090510 /* SunsetShanghai.mov */; };
 		3A6DF7422111E38C00DA5CD2 /* DrawerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A6DF7412111E38C00DA5CD2 /* DrawerView.xib */; };
 		3A6DF7442111E39B00DA5CD2 /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DF7432111E39B00DA5CD2 /* DrawerView.swift */; };
 		3AA90F7A212ED0DA00F12575 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA90F79212ED0DA00F12575 /* StoreView.swift */; };
@@ -48,9 +50,11 @@
 		3A1ECC6B2112F2230043E1B1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3A23B8AE211199BD006A9C95 /* ARWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARWindowViewController.swift; sourceTree = "<group>"; };
 		3A23B8B0211199DE006A9C95 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		3A4363A8213038D300B693A3 /* EPXi.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = EPXi.mov; sourceTree = "<group>"; };
 		3A56BF6D212D7EF80005ABC6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3A5CDDA1212FE4D5009130E3 /* AlbumPopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumPopView.xib; sourceTree = "<group>"; };
+		3A5CDDA3212FE4E0009130E3 /* AlbumPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPopView.swift; sourceTree = "<group>"; };
 		3A6045C52112D9540077EE08 /* ALTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALTheme.swift; sourceTree = "<group>"; };
-		3A647EDC212EDD3900090510 /* SunsetShanghai.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = SunsetShanghai.mov; sourceTree = "<group>"; };
 		3A6DF7412111E38C00DA5CD2 /* DrawerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerView.xib; sourceTree = "<group>"; };
 		3A6DF7432111E39B00DA5CD2 /* DrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
 		3AA90F79212ED0DA00F12575 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				3AA90F7D212ED46E00F12575 /* AlbumView.swift */,
 				3AA90F7B212ED15200F12575 /* StoreView.xib */,
 				3AA90F79212ED0DA00F12575 /* StoreView.swift */,
+				3A5CDDA1212FE4D5009130E3 /* AlbumPopView.xib */,
+				3A5CDDA3212FE4E0009130E3 /* AlbumPopView.swift */,
 			);
 			path = Drawer;
 			sourceTree = "<group>";
@@ -171,8 +177,8 @@
 				3AEAA09A210FF48E00D45A01 /* AppDelegate.swift */,
 				3AEAA0A3210FF49100D45A01 /* LaunchScreen.storyboard */,
 				3AEAA0A1210FF49100D45A01 /* Assets.xcassets */,
-				3A647EDC212EDD3900090510 /* SunsetShanghai.mov */,
 				3ADBD1DD212F9C8400A9DE48 /* Phone_01.scn */,
+				3A4363A8213038D300B693A3 /* EPXi.mov */,
 				3ADBD1E7212F9CC600A9DE48 /* pixel-screenshot.png */,
 				3ADBD1E5212F9CB100A9DE48 /* GooglePixel.png */,
 				3ADBD1E3212F9CA900A9DE48 /* Google-Pixel-XL-Black-Back.png */,
@@ -254,12 +260,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A647EDD212EDD3900090510 /* SunsetShanghai.mov in Resources */,
+				3A5CDDA2212FE4D5009130E3 /* AlbumPopView.xib in Resources */,
 				3ADBD1DE212F9C8400A9DE48 /* Phone_01.scn in Resources */,
 				3AEAA0A5210FF49100D45A01 /* LaunchScreen.storyboard in Resources */,
 				3ADBD1E6212F9CB100A9DE48 /* GooglePixel.png in Resources */,
 				3AA90F80212ED4DD00F12575 /* AlbumView.xib in Resources */,
 				3AEAA0A2210FF49100D45A01 /* Assets.xcassets in Resources */,
+				3A4363A9213038D300B693A3 /* EPXi.mov in Resources */,
 				3ADBD1E0212F9C8F00A9DE48 /* texture.jpg in Resources */,
 				3ADBD1E4212F9CA900A9DE48 /* Google-Pixel-XL-Black-Back.png in Resources */,
 				3AEAA0A0210FF48E00D45A01 /* Main.storyboard in Resources */,
@@ -304,6 +311,7 @@
 				3A23B8AF211199BD006A9C95 /* ARWindowViewController.swift in Sources */,
 				3AB8853E21142D0600211531 /* Photo+CoreDataProperties.swift in Sources */,
 				3AE8636F2111F8C200297088 /* DrawerTabView.swift in Sources */,
+				3A5CDDA4212FE4E0009130E3 /* AlbumPopView.swift in Sources */,
 				3A23B8B1211199DE006A9C95 /* DrawerViewController.swift in Sources */,
 				3A19F6ED21142B1A0002200B /* Album+CoreDataProperties.swift in Sources */,
 				3A19F6EC21142B1A0002200B /* Album.swift in Sources */,

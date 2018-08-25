@@ -93,11 +93,47 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgO-Ye-yPA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                             </arscnView>
-                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXc-eW-Yxv">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXc-eW-Yxv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DqN-9V-mVu">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEm-uf-Mc5">
+                                            <rect key="frame" x="8" y="133.5" width="359" height="200"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IndicatorArrow" translatesAutoresizingMaskIntoConstraints="NO" id="OGL-Dn-qk7">
+                                                    <rect key="frame" x="147" y="30" width="65" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="9f6-AJ-6JC"/>
+                                                        <constraint firstAttribute="height" constant="45" id="kB9-iH-i2b"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an Album to Begin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf9-j2-Ys9">
+                                                    <rect key="frame" x="109" y="83" width="143" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="rHT-dO-fL0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="00S-XG-fVL"/>
+                                                <constraint firstAttribute="bottom" secondItem="OGL-Dn-qk7" secondAttribute="bottom" constant="125" id="Kn8-Vb-U38"/>
+                                                <constraint firstItem="kf9-j2-Ys9" firstAttribute="top" secondItem="OGL-Dn-qk7" secondAttribute="bottom" constant="8" id="YAO-7k-bsf"/>
+                                                <constraint firstItem="OGL-Dn-qk7" firstAttribute="centerX" secondItem="CEm-uf-Mc5" secondAttribute="centerX" id="aVm-Qe-UKp"/>
+                                                <constraint firstItem="kf9-j2-Ys9" firstAttribute="centerX" secondItem="CEm-uf-Mc5" secondAttribute="centerX" constant="1" id="hHA-f9-ID7"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="CEm-uf-Mc5" secondAttribute="bottom" id="7lr-SN-KKh"/>
+                                        <constraint firstAttribute="trailing" secondItem="CEm-uf-Mc5" secondAttribute="trailing" constant="8" id="LBK-ni-aEK"/>
+                                        <constraint firstItem="CEm-uf-Mc5" firstAttribute="leading" secondItem="DqN-9V-mVu" secondAttribute="leading" constant="8" id="QYh-Ar-FD2"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
@@ -185,6 +221,7 @@
                         <viewLayoutGuide key="safeArea" id="A8A-wv-wIa"/>
                     </view>
                     <connections>
+                        <outlet property="currentAlbumTitleLabel" destination="KKZ-l9-r6M" id="YEU-Dn-MIB"/>
                         <outlet property="darkBackgroundBlurView" destination="IXc-eW-Yxv" id="6ib-6C-6ik"/>
                         <outlet property="sceneView" destination="wgO-Ye-yPA" id="W83-58-v34"/>
                     </connections>
@@ -194,4 +231,7 @@
             <point key="canvasLocation" x="232.80000000000001" y="237.48125937031486"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IndicatorArrow" width="174" height="121"/>
+    </resources>
 </document>

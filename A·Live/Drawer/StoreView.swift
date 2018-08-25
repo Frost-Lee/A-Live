@@ -21,20 +21,41 @@ class StoreView: UIView {
                 storeImageView!.bounds.width, animated: false)
         }
     }
+    @IBOutlet weak var backgroundView: UIView! {
+        didSet {
+            backgroundView.alpha = 0
+        }
+    }
     var storeImageView: UIImageView?
+    var popView: AlbumPopView?
+    
+    static var sharedInstance: StoreView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         Bundle.main.loadNibNamed("StoreView", owner: self, options: nil)
         self.addSubview(view)
+        StoreView.sharedInstance = self
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         Bundle.main.loadNibNamed("StoreView", owner: self, options: nil)
         self.addSubview(view)
+        StoreView.sharedInstance = self
     }
 
+    @IBAction func albumButtonTapped(_ sender: UIButton) {
+        popView = AlbumPopView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height,
+                                             width: UIScreen.main.bounds.width, height: 597))
+        self.addSubview(popView!)
+        UIView.animate(withDuration: TimeInterval(0.2), delay: TimeInterval(0), options: UIView.AnimationOptions.curveEaseInOut, animations: {
+            self.popView?.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - 597,
+                                    width: UIScreen.main.bounds.width, height: 597)
+            self.backgroundView.alpha = 0.6
+            }, completion: nil)
+        
+    }
 }
 
 
