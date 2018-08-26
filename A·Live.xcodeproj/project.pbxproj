@@ -112,6 +112,20 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		3A306DE42131481C00D12288 /* DemoResources */ = {
+			isa = PBXGroup;
+			children = (
+				3ADBD1DD212F9C8400A9DE48 /* Phone_01.scn */,
+				3A4363A8213038D300B693A3 /* EPXi.mov */,
+				3ADBD1E7212F9CC600A9DE48 /* pixel-screenshot.png */,
+				3ADBD1E5212F9CB100A9DE48 /* GooglePixel.png */,
+				3ADBD1E3212F9CA900A9DE48 /* Google-Pixel-XL-Black-Back.png */,
+				3ADBD1DF212F9C8F00A9DE48 /* texture.jpg */,
+				3ADBD1E1212F9C9C00A9DE48 /* Phone_01.mtl */,
+			);
+			path = DemoResources;
+			sourceTree = "<group>";
+		};
 		3A6045C72112DBA50077EE08 /* Drawer */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,13 +191,7 @@
 				3AEAA09A210FF48E00D45A01 /* AppDelegate.swift */,
 				3AEAA0A3210FF49100D45A01 /* LaunchScreen.storyboard */,
 				3AEAA0A1210FF49100D45A01 /* Assets.xcassets */,
-				3ADBD1DD212F9C8400A9DE48 /* Phone_01.scn */,
-				3A4363A8213038D300B693A3 /* EPXi.mov */,
-				3ADBD1E7212F9CC600A9DE48 /* pixel-screenshot.png */,
-				3ADBD1E5212F9CB100A9DE48 /* GooglePixel.png */,
-				3ADBD1E3212F9CA900A9DE48 /* Google-Pixel-XL-Black-Back.png */,
-				3ADBD1DF212F9C8F00A9DE48 /* texture.jpg */,
-				3ADBD1E1212F9C9C00A9DE48 /* Phone_01.mtl */,
+				3A306DE42131481C00D12288 /* DemoResources */,
 				3AEAA0A6210FF49100D45A01 /* Info.plist */,
 				3A28A5E82112F6EC00F8313C /* Main */,
 				3A9CA4012112DC22004857EB /* AR */,
