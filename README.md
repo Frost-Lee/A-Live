@@ -7,4 +7,4 @@ __There's a demo app on ios_club branch, the demo had won First Prize on iOS Clu
 
 Highiest respect to MIX team in iOS Club Summer Camp 2018.
 ![MIX Team](https://cl.ly/819d963c920b/IMG_6882.JPG)
-From left to right: Tao Mengting, Huang Jing, Hongli Mao, Wen Tao, Li Canchen, Guan Boang, Cai Changming, Qiao Lulu, Xiong Jing, Cheng Tianen, Li Xiuli.
+From left to right: Tao Mengting, Huang Jing, Mao Hongli, Wen Tao, Li Canchen, Guan Boang, Cai Changming, Qiao Lulu, Xiong Jing, Cheng Tianen, Li Xiuli.
